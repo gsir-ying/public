@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>程序安装包制作工具 - Gsir</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="GSir" /><meta name="description" content="程序安装包制作工具推荐 inno setup 官网 http://www.jrsoftware.org/isinfo.php 简介 Inno Setup是Jordan Russell和Martijn Laan为Windows程序提供的免费安装程序。" /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="程序安装包制作工具" />
+<meta property="og:description" content="程序安装包制作工具推荐 inno setup 官网 http://www.jrsoftware.org/isinfo.php 简介 Inno Setup是Jordan Russell和Martijn Laan为Windows程序提供的免费安装程序。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/" /><meta property="article:published_time" content="2018-12-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-11T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="程序安装包制作工具">
+<meta itemprop="description" content="程序安装包制作工具推荐 inno setup 官网 http://www.jrsoftware.org/isinfo.php 简介 Inno Setup是Jordan Russell和Martijn Laan为Windows程序提供的免费安装程序。">
+
+
+<meta itemprop="datePublished" content="2018-12-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="921">
+
+
+
+<meta itemprop="keywords" content="安装包," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="程序安装包制作工具"/>
+<meta name="twitter:description" content="程序安装包制作工具推荐 inno setup 官网 http://www.jrsoftware.org/isinfo.php 简介 Inno Setup是Jordan Russell和Martijn Laan为Windows程序提供的免费安装程序。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">碧海青天夜夜心</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/downloads/">
+        <li class="mobile-menu-item">下载</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">碧海青天夜夜心</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/downloads/">下载</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">程序安装包制作工具</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-11 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"> 程序人生 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#inno-setup">inno setup</a>
+<ul>
+<li><a href="#官网">官网</a></li>
+<li><a href="#简介">简介</a></li>
+<li><a href="#主要特点">主要特点</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<blockquote>
+<p>程序安装包制作工具推荐</p>
+</blockquote>
+
+<h1 id="inno-setup">inno setup</h1>
+
+<h2 id="官网">官网</h2>
+
+<p><a href="http://www.jrsoftware.org/isinfo.php">http://www.jrsoftware.org/isinfo.php</a></p>
+
+<h2 id="简介">简介</h2>
+
+<p>Inno Setup是Jordan Russell和Martijn Laan为Windows程序提供的免费安装程序。Inno Setup于1997年首次推出，如今在竞争中甚至超越了许多商业安装人员的功能和稳定性。</p>
+
+<h2 id="主要特点">主要特点</h2>
+
+<ul>
+<li>支持自2000年以来的每个Windows版本，包括：Windows 10，Windows 8.1，Windows 8，Windows Server 2012，Windows 7，Windows Server 2008 R2，Windows Vista，Windows Server 2008，Windows XP，Windows Server 2003和Windows2000.（不需要服务包。）</li>
+<li>广泛支持在64位版本的Windows上安装64位应用程序。支持x64和Itanium体系结构。（在Itanium体系结构上，Windows Server 2003上需要Service Pack 1或更高版本才能以64位模式安装。）</li>
+<li>广泛支持管理和非管理安装。</li>
+<li>支持创建单个EXE来安装程序，以便于在线分发。还支持磁盘跨越。</li>
+<li>标准Windows向导界面。</li>
+<li>可自定义的设置类型，例如Full，Minimal，Custom。</li>
+<li>完整的卸载功能。</li>
+<li>文件安装：包括对“deflate”，bzip2和7-Zip LZMA / LZMA2文件压缩的集成支持。安装程序能够比较文件版本信息，替换正在使用的文件，使用共享文件计数，注册DLL / OCX和类型库，以及安装字体。</li>
+<li>在任何地方创建快捷方式，包括在“开始”菜单和桌面上。</li>
+<li>创建注册表和.INI条目。</li>
+<li>在安装之前，期间或之后运行其他程序。</li>
+<li>支持多语言安装，包括从右到左的语言支持。</li>
+<li>支持密码和加密安装。</li>
+<li>支持数字签名的安装和卸载，包括双重签名（SHA1和SHA256）。</li>
+<li>无提示安装和卸载。</li>
+<li>Unicode安装。</li>
+<li>集成的预处理器选项，用于高级编译时自定义。</li>
+<li>集成的Pascal脚本引擎选项，用于高级运行时安装和卸载自定义。</li>
+<li>GitHub提供完整的源代码（Borland Delphi 2.0-5.0和2009）。</li>
+<li>微小的占用空间：仅包含大约500 kB的开销，包括所有功能，大约300 kB的开销，包括除Unicode支持之外的所有功能。</li>
+<li>所有功能都已完整记录。</li>
+<li>由Microsoft Visual Studio Code和Embarcardero Delphi使用。</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">GSir</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-12-11</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%AE%89%E8%A3%85%E5%8C%85/">安装包</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2018-12-11-windows%E7%A8%8B%E5%BA%8F%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Windows程序文件打包工具</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2018-12-07-winform%E7%95%8C%E9%9D%A2%E6%A8%A1%E7%B3%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+            <span class="next-text nav-default">WinForm界面模糊解决方法</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'Gsir';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gsir_ying@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gsir-ying" class="iconfont icon-github" title="github"></a>
+      <a href="http://blog.sina.com.cn/u/5651674758" class="iconfont icon-weibo" title="weibo"></a>
+  <a href="https://gsir.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Gsir</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GNSS数据后处理工具 - Gsir</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="GSir" /><meta name="description" content="介绍常用的gnss数据后处理工具。 GAMIT/GLOBK 网址 官网 http://www-gpsg.mit.edu/~simon/gtgk/down.htm 简介 GAMIT是有MIT和SIO共同研制的用于GNSS定位定轨的数据分析软件包。软件代码基于F" /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gsir.top/post/2018-12-03-gnss%E6%95%B0%E6%8D%AE%E5%90%8E%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GNSS数据后处理工具" />
+<meta property="og:description" content="介绍常用的gnss数据后处理工具。 GAMIT/GLOBK 网址 官网 http://www-gpsg.mit.edu/~simon/gtgk/down.htm 简介 GAMIT是有MIT和SIO共同研制的用于GNSS定位定轨的数据分析软件包。软件代码基于F" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gsir.top/post/2018-12-03-gnss%E6%95%B0%E6%8D%AE%E5%90%8E%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" /><meta property="article:published_time" content="2018-12-03T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-03T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="GNSS数据后处理工具">
+<meta itemprop="description" content="介绍常用的gnss数据后处理工具。 GAMIT/GLOBK 网址 官网 http://www-gpsg.mit.edu/~simon/gtgk/down.htm 简介 GAMIT是有MIT和SIO共同研制的用于GNSS定位定轨的数据分析软件包。软件代码基于F">
+
+
+<meta itemprop="datePublished" content="2018-12-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2714">
+
+
+
+<meta itemprop="keywords" content="GNSS,后处理," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GNSS数据后处理工具"/>
+<meta name="twitter:description" content="介绍常用的gnss数据后处理工具。 GAMIT/GLOBK 网址 官网 http://www-gpsg.mit.edu/~simon/gtgk/down.htm 简介 GAMIT是有MIT和SIO共同研制的用于GNSS定位定轨的数据分析软件包。软件代码基于F"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">碧海青天夜夜心</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/downloads/">
+        <li class="mobile-menu-item">下载</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">碧海青天夜夜心</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/downloads/">下载</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GNSS数据后处理工具</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-03 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"> 数据处理 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#gamit-globk">GAMIT/GLOBK</a>
+<ul>
+<li><a href="#网址">网址</a></li>
+<li><a href="#简介">简介</a></li>
+<li><a href="#使用">使用</a></li>
+</ul></li>
+<li><a href="#bernerse">BERNERSE</a>
+<ul>
+<li><a href="#网址-1">网址</a></li>
+<li><a href="#简介-1">简介</a></li>
+<li><a href="#使用-1">使用</a></li>
+</ul></li>
+<li><a href="#rtklib">RTKLIB</a>
+<ul>
+<li><a href="#简介-2">简介</a></li>
+<li><a href="#使用-2">使用</a></li>
+</ul></li>
+<li><a href="#gpstk">GPSTK</a>
+<ul>
+<li><a href="#官网">官网</a></li>
+<li><a href="#简介-3">简介</a></li>
+<li><a href="#使用-3">使用</a></li>
+</ul></li>
+<li><a href="#glab">gLAB</a>
+<ul>
+<li><a href="#网址-2">网址</a></li>
+<li><a href="#简介-4">简介</a></li>
+<li><a href="#使用-4">使用</a></li>
+</ul></li>
+<li><a href="#gogps">gogps</a>
+<ul>
+<li><a href="#网址-3">网址</a></li>
+<li><a href="#简介-5">简介</a></li>
+</ul></li>
+<li><a href="#gnsser">GNSSer</a>
+<ul>
+<li><a href="#网址-4">网址</a></li>
+<li><a href="#简介-6">简介</a></li>
+</ul></li>
+<li><a href="#其他">其他</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<blockquote>
+<p>介绍常用的gnss数据后处理工具。</p>
+</blockquote>
+
+<h2 id="gamit-globk">GAMIT/GLOBK</h2>
+
+<h3 id="网址">网址</h3>
+
+<p>官网 <a href="http://www-gpsg.mit.edu/~simon/gtgk/down.htm">http://www-gpsg.mit.edu/~simon/gtgk/down.htm</a></p>
+
+<h3 id="简介">简介</h3>
+
+<p>GAMIT是有MIT和SIO共同研制的用于GNSS定位定轨的数据分析软件包。软件代码基于Fortran语言编写，有多个功能独立运行模块组成，具有结果准确，运算速度快，自动化批量处理等特点。长基线相对精度等达到10 <sup>-9</sup>左右，短基线精度优于1mm，是世界上最优秀的GPS软件之一。</p>
+
+<p>GLOBK是卡尔曼滤波器，可联合解算空间大地测量和地面观测数据。主要应用于：时序坐标重复性检测；综合处理得到坐标和速度。</p>
+
+<h3 id="使用">使用</h3>
+
+<p>官方参考手册</p>
+
+<p><a href="http://geoweb.mit.edu/gg/Intro_GG.pdf">http://geoweb.mit.edu/gg/Intro_GG.pdf</a></p>
+
+<p><a href="http://geoweb.mit.edu/gg/GAMIT_Ref.pdf">http://geoweb.mit.edu/gg/GAMIT_Ref.pdf</a></p>
+
+<p><a href="http://geoweb.mit.edu/gg/GLOBK_Ref.pdf">http://geoweb.mit.edu/gg/GLOBK_Ref.pdf</a></p>
+
+<p>初学者也可以参考以下中文手册</p>
+
+<p><a href="https://www.gsir.top/downloads/">GAMIT入门攻略.pdf</a></p>
+
+<p><a href="https://www.gsir.top/downloads/">GAMIT_GLOBK软件中文使用说明书.pdf</a></p>
+
+<h2 id="bernerse">BERNERSE</h2>
+
+<h3 id="网址-1">网址</h3>
+
+<p>官网 <a href="http://www.bernese.unibe.ch/">http://www.bernese.unibe.ch/</a></p>
+
+<h3 id="简介-1">简介</h3>
+
+<p>Bernese软件是由瑞士伯尔尼大学天文研究所研究开发的GNSS高精度数据处理软件(包括GPS数据、GLONASS数据、SLR数据)。目前最新版本5.2。具有准确的数学模型，支持非差和求差两种处理模式、详细的计算过程参数控制、强大的自动化批处理、国际标准适应性、模块化设计等特点。</p>
+
+<p>主要功能和适用领域</p>
+
+<p>小型单/双频仪器观测的GPS网的快速数据处理</p>
+
+<p>永久GPS跟踪站观测网的自动处理</p>
+
+<p>超大数量接收机组成的观测网的数据处理</p>
+
+<p>混合不同类型接收机的观测网和需要考虑接收机和卫星天线的相位中心参数变化</p>
+
+<p>同时处理GPS 数据和GLONASS 数据,还可以处理SLR 数据</p>
+
+<p>长距离基线的模糊度解算（2000公里或更远距离）</p>
+
+<p>获得最小约束的网平差解</p>
+
+<p>估计对流层天顶延迟,进行大气和气象应用和研究</p>
+
+<p>站钟及星钟参数估计和时间传递</p>
+
+<p>精密定轨和估计地球自转参数</p>
+
+<h3 id="使用-1">使用</h3>
+
+<p>官方用户手册 <a href="http://www.bernese.unibe.ch/docs/DOCU52.pdf">http://www.bernese.unibe.ch/docs/DOCU52.pdf</a></p>
+
+<h2 id="rtklib">RTKLIB</h2>
+
+<p>官网 <a href="http://www.rtklib.com/">http://www.rtklib.com/</a></p>
+
+<h3 id="简介-2">简介</h3>
+
+<p>RTKLIB是一个开源程序包，用于GNSS（全球导航卫星系统）的标准和精确定位。RTKLIB由一个便携式程序库和几个利用该库的AP（应用程序）组成。具有以下特点：</p>
+
+<p>（1）支持标准和精确定位算法：</p>
+
+<p>GPS，GLONASS，Galileo，QZSS，BeiDou和SBAS</p>
+
+<p>（2）支持GNSS的各种定位模式，用于实时和后期处理：</p>
+
+<p>单，DGPS / DGNSS，运动学，静态，移动基线，固定，PPP-运动学，PPP-静态和PPP-固定</p>
+
+<p>（3）支持GNSS的许多标准格式和协议：</p>
+
+<p>RINEX 2.10，2.11，2.12 OBS / NAV / GNAV / HNAV / LNAV / QNAV，RINEX 3.00，3.01，3.02 OBS / NAV，RINEX 3.02 CLK，RTCM ver.2.3，RTCM ver.3.1（带修正1-5），VER 1.3.2，BINEX，NTRIP 1.0，RTCA / DO-229C，NMEA 0183，SP3-C ，ANTEX 1.4，IONEX 1.0，NGS PCV和EMS 2.0（参照该手册的详细信息）</p>
+
+<p>（4）支持几个GNSS接收器的专有消息：</p>
+
+<p>NovAtel：OEM4 / V / 6，OEM3，OEMStar，Superstar II，Hemisphere：Eclipse，Crescent，u-blox：LEA-4T / 5T / 6T，SkyTraq：S1315F，JAVAD：GRIL / GREIS，Furuno：GW-10 II / III 和NVS NV08C BINR（详情请参阅手册）</p>
+
+<p>（6）支持外部通信：</p>
+
+<p>串行，TCP / IP，NTRIP，本地日志文件（记录和回放）和FTP / HTTP（自动下载）</p>
+
+<p>（7）它为GNSS数据处理提供了许多库函数和API：</p>
+
+<p>卫星和导航系统功能，矩阵和向量功能，时间和字符串功能，坐标转换，输入和输出功能，调试跟踪功能，平台相关功能，定位模型，大气模型，天线模型，地球潮汐模型，大地水准面模型，基准转换，RINEX功能，星历和时钟功能，精确的星历和时钟功能，接收器原始数据功能，RTCM功能，解决方案功能，Google Earth KML转换器，SBAS功能，选项功能，流数据输入和输出功能，整数模糊度解析，标准定位，精确定位，后处理定位，流服务器功能，RTK服务器功能，下载功能</p>
+
+<p>（8）其他特点</p>
+
+<h3 id="使用-2">使用</h3>
+
+<ul>
+<li><a href="http://www.gsir.top/downloads/">RTKLIB_manual.pdf</a></li>
+</ul>
+
+<p>github网址 <a href="https://github.com/tomojitakasu/RTKLIB/tree/rtklib_2.4.3">https://github.com/tomojitakasu/RTKLIB/tree/rtklib_2.4.3</a></p>
+
+<h2 id="gpstk">GPSTK</h2>
+
+<h3 id="官网">官网</h3>
+
+<p><a href="https://sourceforge.net/projects/gpstk/">https://sourceforge.net/projects/gpstk/</a></p>
+
+<h3 id="简介-3">简介</h3>
+
+<p>GPS工具包（GPSTk）是由空间和地球物理实验室（SGL）赞助的开源（LGPL）项目，该实验室是德克萨斯大学奥斯汀分校应用研究实验室（ARL）的一部分。主要基于c++语言开发。</p>
+
+<p>GPSTk项目的主要目标是提供GNSS和卫星导航界使用的应用程序、提供核心库以促进GNSS应用程序的开发。</p>
+
+<p>GPSTk库中有几类功能：</p>
+
+<p>GPS时间。时间表示之间的转换，如MJD，GPS周和星期几，以及许多其他。</p>
+
+<p>星历计算。广播和精确星历的位置和时钟插值。</p>
+
+<p>大气延迟模型。包括电离层和对流层模型。</p>
+
+<p>定位解决方案 包括接收器自主完整性监控算法的实现。</p>
+
+<p>数学。包括矩阵和向量实现，以及插值和数值积分。</p>
+
+<p>GNSS数据结构。包含根据时期，卫星，来源和观测类型映射的观测的数据结构。还提供了适当的处理类，包括完整的“精确点定位”（PPP）处理链。</p>
+
+<p>应用框架。包括处理命令行选项，提供交互式帮助和使用文件系统。</p>
+
+<h3 id="使用-3">使用</h3>
+
+<p>github开源网址 <a href="https://github.com/SGL-UT/GPSTk">https://github.com/SGL-UT/GPSTk</a></p>
+
+<h2 id="glab">gLAB</h2>
+
+<h3 id="网址-2">网址</h3>
+
+<p>官方网址 <a href="http://gage.upc.edu/gLAB">http://gage.upc.edu/gLAB</a></p>
+
+<h3 id="简介-4">简介</h3>
+
+<p>gLAB是一个由欧洲航天局（ESA）合同开发的软件工具套件，由 Universitat Politecnica de Catalunya（UPC）的天文学和地理信息学（gAGE）研究小组开发，是一个交互式教育多功能包，用于处理和分析GNSS数据。</p>
+
+<p>gLAB在厘米级执行GNSS可观测量（伪距和载波相位）的精确建模，允许独立的GPS定位和PPP。可以独立评估每个错误贡献者，这反过来又提供了主要的教育益处。gLAB适用于各种标准格式，如RINEX-3.00，SP3，ANTEX和SINEX文件等。此外，GPS，Galileo和GLONASS还包括功能，允许使用真实的多星座数据执行一些数据分析。</p>
+
+<p>gLAB软件工具非常灵活，能够在Linux，Windows和Mac操作系统下运行，并由ESA教育办公室免费提供给大学和GNSS专业人员。</p>
+
+<h3 id="使用-4">使用</h3>
+
+<p>官方用户手册 <a href="http://gage.upc.edu/sites/default/files/gLAB/gLAB_SUM.pdf">http://gage.upc.edu/sites/default/files/gLAB/gLAB_SUM.pdf</a></p>
+
+<h2 id="gogps">gogps</h2>
+
+<h3 id="网址-3">网址</h3>
+
+<p>官网 <a href="http://www.gogps-project.org/">http://www.gogps-project.org/</a></p>
+
+<h3 id="简介-5">简介</h3>
+
+<p>goGPS是一种软件包，旨在通过RTK技术并借助DTM提高低成本（单频）GPS设备的定位精度。目前，它需要输入1 Hz的原始数据（观测值）。有java和matlab来两种版本。</p>
+
+<p>MATLAB和Java版本都在GitHub上：https：//github.com/goGPS-Project</p>
+
+<h2 id="gnsser">GNSSer</h2>
+
+<h3 id="网址-4">网址</h3>
+
+<p><a href="http://www.gnsser.com/">http://www.gnsser.com/</a></p>
+
+<h3 id="简介-6">简介</h3>
+
+<p>GNSSer 是一个科学研究型 GNSS 数据处理平台，大量采用分布式、并行化数据处理技术，致力于大规模，高精度、自动化、云服务化的GNSS数据的快速处理和服务，同时提供大地测量在线计算功能。 目前软件可以在Windows系统下运行，同时提供在线网络计算，软件具有友好的操作界面和详细的数据配置，支持多种GNSS系统，包括GPS、Beidou、GLONASS等， 支持多种数据文件的读取和输出，支持分布式并行处理。 软件具有多种版本，将提供免费的公开版本供大家使用。</p>
+
+<h2 id="其他">其他</h2>
+
+<ul>
+<li><p>GIPSY</p></li>
+
+<li><p>PODAP</p></li>
+
+<li><p>QOCA</p></li>
+
+<li><p>TBC</p></li>
+
+<li><p>HGO</p></li>
+
+<li><p>LGO</p></li>
+
+<li><p>CHO</p></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">GSir</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-12-03</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/gnss/">GNSS</a>
+          <a href="/tags/%E5%90%8E%E5%A4%84%E7%90%86/">后处理</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2018-12-04-gnss%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GNSS常用数据下载</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2018-12-03-linux%E5%AE%89%E8%A3%85powershell/">
+            <span class="next-text nav-default">Linux安装powershell</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'Gsir';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gsir_ying@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gsir-ying" class="iconfont icon-github" title="github"></a>
+      <a href="http://blog.sina.com.cn/u/5651674758" class="iconfont icon-weibo" title="weibo"></a>
+  <a href="https://gsir.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Gsir</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

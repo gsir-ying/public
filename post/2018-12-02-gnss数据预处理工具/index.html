@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GNSS数据预处理工具 - Gsir</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="GSir" /><meta name="description" content="收集、分享、介绍常用的GNSS数据预处理工具。 1 TEQC - GNSS数据工具包 1.1 网址 https://www.unavco.org/software/data-processing/teqc/teqc.html winteqc网址 http://teqc.silkwerks.com/ 1.2 简介 Teqc是一种简单但功能强大且统一的" /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GNSS数据预处理工具" />
+<meta property="og:description" content="收集、分享、介绍常用的GNSS数据预处理工具。 1 TEQC - GNSS数据工具包 1.1 网址 https://www.unavco.org/software/data-processing/teqc/teqc.html winteqc网址 http://teqc.silkwerks.com/ 1.2 简介 Teqc是一种简单但功能强大且统一的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" /><meta property="article:published_time" content="2018-12-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-02T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="GNSS数据预处理工具">
+<meta itemprop="description" content="收集、分享、介绍常用的GNSS数据预处理工具。 1 TEQC - GNSS数据工具包 1.1 网址 https://www.unavco.org/software/data-processing/teqc/teqc.html winteqc网址 http://teqc.silkwerks.com/ 1.2 简介 Teqc是一种简单但功能强大且统一的">
+
+
+<meta itemprop="datePublished" content="2018-12-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="7760">
+
+
+
+<meta itemprop="keywords" content="预处理," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GNSS数据预处理工具"/>
+<meta name="twitter:description" content="收集、分享、介绍常用的GNSS数据预处理工具。 1 TEQC - GNSS数据工具包 1.1 网址 https://www.unavco.org/software/data-processing/teqc/teqc.html winteqc网址 http://teqc.silkwerks.com/ 1.2 简介 Teqc是一种简单但功能强大且统一的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">碧海青天夜夜心</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/downloads/">
+        <li class="mobile-menu-item">下载</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">碧海青天夜夜心</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/downloads/">下载</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GNSS数据预处理工具</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-02 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"> 数据处理 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-teqc-gnss数据工具包">1 TEQC - GNSS数据工具包</a>
+<ul>
+<li><a href="#1-1-网址">1.1 网址</a></li>
+<li><a href="#1-2-简介">1.2 简介</a></li>
+<li><a href="#1-3-使用">1.3 使用</a></li>
+</ul></li>
+<li><a href="#2-rnx2crx-crx2rnx-观测数据解压缩">2 rnx2crx＆crx2rnx - 观测数据解压缩</a>
+<ul>
+<li><a href="#2-1-参考地址">2.1 参考地址</a></li>
+<li><a href="#2-2-使用">2.2 使用</a></li>
+</ul></li>
+<li><a href="#3-gfzrnx-rinex-gnss数据转换和操作工具箱">3 GFZRNX - RINEX GNSS数据转换和操作工具箱</a>
+<ul>
+<li><a href="#3-1-参考网址">3.1 参考网址</a></li>
+<li><a href="#3-2-简介">3.2 简介</a></li>
+<li><a href="#3-3-使用">3.3 使用</a></li>
+</ul></li>
+<li><a href="#4-unixtools-v1-0">4 UnixTools v1.0</a>
+<ul>
+<li><a href="#4-1-网址">4.1 网址</a></li>
+<li><a href="#4-2-简介">4.2 简介</a></li>
+<li><a href="#4-3-unxutils-windows下unix工具包">4.3 unxutils - windows下unix工具包</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<blockquote>
+<p>收集、分享、介绍常用的GNSS数据预处理工具。</p>
+</blockquote>
+
+<h2 id="1-teqc-gnss数据工具包">1 TEQC - GNSS数据工具包</h2>
+
+<h3 id="1-1-网址">1.1 网址</h3>
+
+<p><a href="https://www.unavco.org/software/data-processing/teqc/teqc.html">https://www.unavco.org/software/data-processing/teqc/teqc.html</a></p>
+
+<p>winteqc网址 <a href="http://teqc.silkwerks.com/">http://teqc.silkwerks.com/</a></p>
+
+<h3 id="1-2-简介">1.2 简介</h3>
+
+<p>Teqc是一种简单但功能强大且统一的工具，用于解决GPS， GLONASS， Galileo， SBAS， 北斗， QZSS和 IRNSS 数据的许多预处理问题 ，特别是在RINEX或BINEX格式中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">格式转换：原生二进制格式的二进制数据读取/转换（OBS，NAV和/或MET文件的可选RINEX文件创建或BINEX的可选创建）
+
+编辑：包括时间窗口; 文件拼接; SV或其他过滤; 元数据提取，编辑和/或校正RINEX标头元数据或BINEX元数据记录
+
+质量检查：GPS和/或GLONASS数据的质量检查（原生二进制，BINEX或RINEX观测文件;有或没有星历文件）</pre></td></tr></table>
+</div>
+</div>
+<h3 id="1-3-使用">1.3 使用</h3>
+
+<ul>
+<li><p>说明书（pdf）：<a href="https://www.unavco.org/software/data-processing/teqc/doc/UNAVCO_Teqc_Tutorial.pdf">https://www.unavco.org/software/data-processing/teqc/doc/UNAVCO_Teqc_Tutorial.pdf</a></p></li>
+
+<li><p><a href="https://www.gsir.top/downloads/">teqc快速使用-ch</a></p></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span><span class="lnt">346
+</span><span class="lnt">347
+</span><span class="lnt">348
+</span><span class="lnt">349
+</span><span class="lnt">350
+</span><span class="lnt">351
+</span><span class="lnt">352
+</span><span class="lnt">353
+</span><span class="lnt">354
+</span><span class="lnt">355
+</span><span class="lnt">356
+</span><span class="lnt">357
+</span><span class="lnt">358
+</span><span class="lnt">359
+</span><span class="lnt">360
+</span><span class="lnt">361
+</span><span class="lnt">362
+</span><span class="lnt">363
+</span><span class="lnt">364
+</span><span class="lnt">365
+</span><span class="lnt">366
+</span><span class="lnt">367
+</span><span class="lnt">368
+</span><span class="lnt">369
+</span><span class="lnt">370
+</span><span class="lnt">371
+</span><span class="lnt">372
+</span><span class="lnt">373
+</span><span class="lnt">374
+</span><span class="lnt">375
+</span><span class="lnt">376
+</span><span class="lnt">377
+</span><span class="lnt">378
+</span><span class="lnt">379
+</span><span class="lnt">380
+</span><span class="lnt">381
+</span><span class="lnt">382
+</span><span class="lnt">383
+</span><span class="lnt">384
+</span><span class="lnt">385
+</span><span class="lnt">386
+</span><span class="lnt">387
+</span><span class="lnt">388
+</span><span class="lnt">389
+</span><span class="lnt">390
+</span><span class="lnt">391
+</span><span class="lnt">392
+</span><span class="lnt">393
+</span><span class="lnt">394
+</span><span class="lnt">395
+</span><span class="lnt">396
+</span><span class="lnt">397
+</span><span class="lnt">398
+</span><span class="lnt">399
+</span><span class="lnt">400
+</span><span class="lnt">401
+</span><span class="lnt">402
+</span><span class="lnt">403
+</span><span class="lnt">404
+</span><span class="lnt">405
+</span><span class="lnt">406
+</span><span class="lnt">407
+</span><span class="lnt">408
+</span><span class="lnt">409
+</span><span class="lnt">410
+</span><span class="lnt">411
+</span><span class="lnt">412
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">1. RINEX文件改变采样率：teqc -O.dec 30s filename1 &gt; filename2 表示从filename1(Rinex格式)中按30秒等间隔提取观测值，并将结果保存为filename2.
+
+2. RINEX文件的切割：利用时间窗进行RINEX文件任意切割。
+
+2.1 [start]+d[Y,M,d,h,m,s]指定以RINEX文件开始观测时间为上限的时间间隔+d[Y,M,d,h,s]。
+例如：提取观测文件60.06o自观测历元起前30min的观测数据并保存为60_s30min.06o,可运行命令：
+    teqc +dm 30 60.06o &gt; 60_s30min.06o
+例如：提取观测文件60.06o自观测历元起前1h的观测数据并保存为60_s1h.06o,可运行命令：
+    teqc +dh 1 60.06o &gt; 60_s30min.06o
+例如：提取观测文件60.06o自观测结束前30min的观测数据并保存为60_e30min.06o,可运行命令：
+    teqc -dm 30 60.06o &gt; 60_e30min.06o
+例如：提取观测文件60.06o自观测结束前1h的观测数据并保存为60_e1h.06o,可运行命令：
+    teqc -dh 1 60.06o &gt; 60_e30min.06o
+2.2 -st[YY MM dd hh mm ss[.sss...]] -e[YY MM dd hh mm ss[.sss...]] 使用-st配置选项规定时间窗口为从...至...
+例如：提取观测文件test08.o文件从5点开始后3个小时(5:00-8:00)的观测数据，并保存为text1.o,可运行命令：
+    teqc -st 05:00:00 +dh 3 test08.o &gt;text1.o
+例如：提取从08年1月1日3点至6点的观测数据，可运行命令(注意空格不能多!)：
+    teqc -st 08:01:01:03:00:00 -e 08:01:01:06:00:00 test08.o &gt;text2.o
+
+3. RINEX文件的合并，运行:&gt;teqc file1 file2…&gt;my_file ,即可把file1 file2…合并为一个my_file RINEX文件。
+注意file1 file2…等RINEX文件必须是时间上连续的,同时在相邻文件的合并处会有注释行:RINEX FILE SPLICECOMMENT。
+例如：algo0010.08o和algo0020.08o分别是连续两天ALGO站的观测数据，将二者合并得到文件algo[12].08o,命令如下：
+    teqc algo0010.08o algo0020.08o &gt;algo[12].08o
+
+(注意：这个拼接的命令仅仅发生在拼接的RINEX OBS文件中，因此在RINEX NAV和RINEX MET文件的头文件后，RINEX标准不承认这个注释。)
+4. 不同接收机观测文件格式转换(Translation)
+例如，假定从天宝SSE接收机下载fbar.bin文件中含有的RT17格式的数据为GPS周866，1996年8月11日到1996年8月17日。那么，执行
+teqc -tr s -week 866 +nav fbar2240.96n fbar.bin &gt; fbar2240.96o 
+
+5. 卫星系统的选择和特定卫星的禁用。对于GPS/GLONASS双星接收机,可以使用TEQC进行卫星的选用,
+例如：去掉GLONASS卫星数据的指令是:&gt;teqc -R输入文件&gt;输出文件
+    teqc -R unb12600.03o &gt; unb12600.new,
+例如：禁用prn#的GPS卫星的观测数据指令是:&gt;teqc -G#输入文件&gt;输出文件。
+    teqc -G6 test.08o &gt;test.#6.08o
+
+6. 设置卫星高度角。在进行对流层和电离层延迟分析时,需要考虑低高度角卫星.
+例如：用如下指令设置卫星高度角限值为5°:
+    teqc -set_mask 5输入文件&gt;输出文件 
+
+7. 选择观测值类型。
+例如：从test.08o文件中提取单频观测值L1(不区分大小写)，可运行以下命令：
+    teqc -O.obs L1 test.08o &gt;test.L1.08o
+例如：要提取L1,L2,P1,P2(不区分大小写,+可省略),可运行以下命令：
+    teqc -O.obs L1+L2+P1+P2 test.08o &gt;test.L1L2P1P2.08o
+8. 质量检核(Quality Checking)
+根据是否利用导航文件信息,TEQC分为qc-lite和qc-full两种检核方式。
+
+8.1 qc-lite (无导航文件)
+例如：运行teqc + qc unb12600.03o
+TEQC则对文件unb12600.03o在qc-lite方式下进行质量检核。质量检核的结果会生成报告文件unb12600.03S和数据文件unb12600.ion(L1载波的电离层延迟)、unb12600.iod(电离层延迟的变化率)、unb12600.mp1(L1载波C/A码或P码伪距的多路径影响)、unb12600.mp2(L2载波P码伪距的多路径影响)、unb12600. sn1 (L1载波的信噪比)、unb12600.sn2(L2载波的信噪比)。
+
+8.2 qc-full (输入导航文件或同一目录下有对应的N文件)
+同时输入RINEX观测数据文件和导航数据文件,即运行&gt;teqc +qc nav unb12600.03n unb12600.03o；或者导航数据文件和观测数据文件在同一目录下，TEQC会自动搜索导航数据文件,而无需用-nav指定,即运行&gt;teqc +qc unb12600.03o,此时TEQC则对文件unb12600.03o在qc-full方式下进行质量检核。检核的结果除qc-lite方式下的报告文件和数据文件外,还增添了卫星和接收机天线的位置信息以及两个数据文件unb12600.azi(方位角),unb12600.ele(高度角)。
+
+
+9. 利用TEQC进行单点定位计算
+计算unb12600.03o各历元伪距单点定位结果(x,y,z)的指令是:&gt;teqc +qc +eepx unb12600.03o &gt; unb12600.xyz.将此结果与自编程序进行比较。
+
+Usage: teqc [opts] file1 [file2 [...]]
+   or: teqc [opts] &lt; stdin
+where [opts]:
+        -ver[sion] or +ver[sion]dump program version and build to stderr
+        -id or +id           dump program id to stderr
+        -help or +help       dump the entire on-line help to stderr
+        +relax               allow relaxed requirements on RINEX header fields
+        -relax               strict requirements on RINEX header fields (default)
+        +reformat            allow reading of misformatted RINEX data fields
+        -reformat            strict requirements on RINEX data fields (default)
+        +err name            write stderr directly to file &#39;name&#39;
+        ++err name           append stderr directly to file &#39;name&#39;
+        +out name            write stdout directly to file &#39;name&#39;
+        ++out name           append stdout directly to file &#39;name&#39;
+        -config name         read file(s) &#39;name&#39; as configuration file(s)
+        +config              dump all set parameters as a configuration to stdout
+        ++config             dump all known parameters as a superset configuration to stdout
+        +bcf                 dump all known parameters as a BINEX configuration to stdout
+        ++igs                dump all IGS receiver/antenna/dome designations to stdout
+        ++sym                dump all ASCII QC plot symbols to stdout
+        -max_rx_ch[annels] # set maximum # of receiver channels based on receiver type
+                               (default = 12 unless found by matching with IGS designation)
+        -max_rx_SVs #        set maximum # of SVs trackable (per OBS epoch) based on receiver type
+                               (default = 12 unless found by matching with IGS designation)
+        -n_GPS #             set maximum expected GPS SV PRN to 0 &lt; # &lt; 256 (default = 32)
+        -n_GLONASS #         set maximum expected GLONASS SV # to 0 &lt; # &lt; 256 (default = 24)
+        -n_SBAS #            set maximum expected SBAS SV # to 0 &lt; # &lt; 256 (default = 19)
+        -n_Galileo #         set maximum expected Galileo SV # to 0 &lt; # &lt; 256 (default = 32)
+        +igs                 check rx and ant designations with IGS list (default)
+        -igs                 don&#39;t check rx and ant designations with IGS list
+        +ch                  use all channels (default)
+        -ch#                 don&#39;t use channel #
+        +NaN_obs             use all OBS data (default)
+        -NaN_obs #           don&#39;t use SV w/ NaN data in obs list #
+        +G                   use all GPS SVs (default)
+        -G#                  don&#39;t use GPS SV PRN #
+        +R                   use all GLONASS SVs (default)
+        -R#                  don&#39;t use GLONASS SV slot #
+        +S                   use all SBAS SVs (default)
+        -S#                  don&#39;t use SBAS SV PRN #
+        +E                   use all Galileo SVs (default)
+        -E#                  don&#39;t use Galileo SV PRN #
+                +sv_dup[licates]   allow duplicate SVs in RINEX output
+                -sv_dup[licates]   remove duplicate SVs before RINEX output (default)
+        +svo                 order SVs by PRN or slot #
+        -svo                 SV detection ordering (default)
+        -st[art_window] str  set start time to str == [[[[[[YY]YY]MM]DD]hh]mm]ss[.sssss]
+        +dX #                delta X time of # from start time; X == Y, M, d, h, m, s for year,...,second
+        -dX #                delta X time of # from end time; X == Y, M, d, h, m, s for year,...,second
+        -e[nd_window] str    set end time to str == [[[[[[YY]YY]MM]DD]hh]mm]ss[.sssss]
+        -hole name           read file &#39;name&#39; to establish list of window holes
+        -ns str              set next start time to str == [[hh]mm]ss[.sssss]
+        -ne str              set next end time to str == [[hh]mm]ss[.sssss]
+        -tbin # str          time binned output with # time-delta (# = &lt;N&gt;[d|h|m|s]) and filename prefix &#39;str&#39;
+        -ast str             set aligned time binned start time to str == [[[[[[YY]YY]MM]DD]hh]mm]ss[.sssss]
+                              ... or str = - or _ to start alignment with the first observation epoch
+        +win_mo[nument] #    window filter on monument/marker name string #, maximal match
+        -win_mo[nument] #    window filter on monument/marker name string #, minimal match
+        +win_mn #            window filter on monument/marker number string #, maximal match
+        -win_mn #            window filter on monument/marker number string #, minimal match
+                +xdr               attempt to use NMEA XDR strings as met data (default)
+                -xdr               do not attempt to use NMEA XDR strings as met data
+        -delim#              change delimiter to # for seperating file names (default = ,)
+        +obs[file(s)] name   output any OBS records in native format to RINEX filename &#39;name&#39;
+        +nav[file(s)] list   output any NAV records in native format to RINEX filename &#39;list&#39;
+                             where &#39;list&#39; == system filename(s) ordered gps[,glonass],[sbas]] (- or _ to omit a specific system name)
+        +met[file(s)] name   output any MET records in native format to RINEX filename &#39;name&#39;
+        +eds                 output external data strings to stderr
+        -eds                 don&#39;t output external data strings (default)
+        +event[s_out]        output event info with observations in RINEX obs
+        -event[s_out]        don&#39;t output event info with observations (default)
+        +dump_i[on]          dump all ionosphere model parameters to stderr
+        -dump_i[on]          don&#39;t dump ionosphere model parameters to stderr (default)
+        +dump_u[tc]          dump all UTC model parameters to stderr
+        -dump_u[tc]          don&#39;t dump UTC model parameters to stderr (default)
+        +diag                dump parsing and other diagnostics to stderr
+        -diag                don&#39;t dump parsing and other diagnostics to stderr (default)
+        +doy                 format certain dates such as metadata in year day-of-year
+        -doy                 dates formatted in year month day (default)
+        +smtt                smooth time tag (ms jumps in phase and range) (default)
+        -smtt                ms jumps in time tag (smooth phase and range)
+        -aoa code            input is from AOA (JPL) receiver, record type &#39;code&#39;:
+                               code = cb for ConanBinary survey data from TurboRogue or TurboStar rxs
+                               code = tb for TurboBinary survey data from TurboRogue or TurboStar rxs
+                               code = tbY for TurboBinary survey data from Benchmark ACT rx (&#39;Y-codeless&#39;)
+        -ash[tech] code      input is from Ashtech receiver, record type &#39;code&#39;:
+                               code = d for B-file survey data
+                               code = s for streamed (MBEN/DBEN) data
+                               code = r for R-file format data
+                               code = u for U-file format data
+        -cmc code            input is from Canadian Marconi (CMC) receiver, record type &#39;code&#39;:
+                               code = b for CMC binary
+        -jav[ad] code        input is from Javad receiver, record type &#39;code&#39;:
+                               code = jps for Javad JPS
+        -lei[ca] code        input is from Leica receiver, record type &#39;code&#39;:
+                               code = ds for Leica DS format
+                               code = lb2 for Leica LB2 format
+                               code = mdb for Leica MDB format
+        -mot[orola] code     input is from Motorola receiver, record type &#39;code&#39;:
+                               code = oncore for Oncore binary
+        -nct code            input is from NavCom Technologies receiver, record type &#39;code&#39;:
+                               code = b for NavCom binary
+        -roc[kwell] code     input is from Rockwell receiver, record type &#39;code&#39;:
+                               code = z for Zodiac format
+        -sep[tentrio] code   input is from Septentrio receiver, record type &#39;code&#39;:
+                               code = sbf for Septentrio Binary Format
+        -top[con] code       input is from Topcon receiver, record type &#39;code&#39;:
+                               code = tps for Topcon TPS
+        -tr[imble] code      input is from Trimble receiver, record type &#39;code&#39;:
+                               code = d for .dat survey data
+                               code = s for big-endian streamed data
+        -ti code             input is from Texas Instruments receiver, record type &#39;code&#39;:
+                               code = gesar for TI-4100 GESAR &amp; BEPP/CORE format survey data
+                               code = rom for TI-4100 TI-ROM format survey data
+        -ubl[ox] code        input is from u-blox AG receiver, record type &#39;code&#39;:
+                               code = ubx for u-blox UBX binary
+        -binex               input is BINEX format
+        +binex &lt;record_types&gt;               output to be BINEX
+                               &lt;record_types&gt; = - for default types
+        -rtigs               input is IGS RTWG (RTIGS) format
+        -soc                 input is JPL Soc format
+        -argo                input is ARGO format
+        -P[codes]            P-codeless (L2-squaring) or C/A-L1-only receiver
+        +P[codes]            normal dual-frequency receiver (including L2C-capable) (default)
+        +C2                  LC2 code pseudorange to be included in default observables (i.e. no use of -O.obs[_types])
+        -C2                  LC2 code pseudorange not to be included in default observables (default)
+        +L2                  expect and use L2-carrier data (default)
+        -L2                  don&#39;t expect L2-carrier data
+        +L1_2                keep L1 cycle data if L1 is squared (default)
+        -L1_2                delete L1 cycle data if L1 is squared
+        +L2_2                keep L2 cycle data if L2 is squared (default)
+        -L2_2                delete L2 cycle data if L2 is squared
+        +CA_L1               use phase value in C/A code block as L1 (default for TPS|JPS|SBF formats and Leica MDB 119)
+        -CA_L1               use phase value in P1 code block as L1 (default except for TPS|JPS|SBF formats and Leica MDB 119)
+        +L2C_L2              use phase value in L2C code block as L2
+        -L2C_L2              use phase value in P2 code block as L2 (default)
+        +L5                  expect and use L5-carrier data
+        -L5                  don&#39;t expect L5-carrier data (default)
+        -ToE_dt #            ToE lookback time from first observation epoch (default # = 2.0 hours)
+        +msec_phs_adj        include ms adjustment to phase values at rx ms resets
+        -msec_phs_adj        don&#39;t include ms adjustment to phase values at rx ms resets (default)
+        +leap[_seconds]      subtract current leap seconds from GLONASS pseudoranges (default)
+        -leap[_seconds]      no leap second adjustments to GLONASS pseudoranges
+        +rssc                report site survey change(s) (default)
+        -rssc                don&#39;t report site survey change(s)
+        +rds                 reverse Doppler sign
+        -rds                 keep current Doppler sign (default)
+        +smooth[ing]         include smoothing correction to pseudoranges
+        -smooth[ing]         don&#39;t include smoothing correction to pseudoranges (default)
+        +force_dBHz          force dBHz interpretation of certain snr values (Ashtech, Trimble, ...)
+        -force_dBHz          don&#39;t force dBHz interpretaion of snr values (default)
+        +rx_clk_off[set]     include receiver clock offset to RINEX OBS and certain BINEX
+        -rx_clk_off[set]     don&#39;t include receiver clock offset (default)
+        +rx_ms_adj[ust]      correct data, if needed, for receiver millisecond resets during translation (default)
+        -rx_ms_adj[ust]      do not correct data, i.e. it is correct as is
+        -r[everse]           normal processor endianness on binary data output (default)
+        +r[everse]           reverse processor endianness on binary data output (BINEX only for now)
+        +Ashtech_qd          include all &#39;questionable&#39; data when translating
+        -Ashtech_qd          exclude all &#39;questionable&#39; data (default)
+        +Ashtech_B_file_adjust  Ashtech B-file is corrupted
+        -Ashtech_B_file_adjust  normal Ashtech B-file (default)
+        +Ashtech_old_clk_reset  use old Ashtech clock reset scheme
+        -Ashtech_old_clk_reset  use modern Ashtech clock reset scheme (default)
+        +lb2_fe              ignore Leica LB2 records until 0xfe record is read
+        -lb2_fe              use all Leica LB2 records (default)
+        +skip_init_LB2_03    skip initial Leica LB2 0x03 record
+        -skip_init_LB2_03    use initial Leica LB2 0x03 record (default)
+        -sbfobs #            specify Septentrio Binary Format observation record to use; # = 5889|5890|5944
+        +geod_p              data from Trimble Geodesist-P receiver
+        -geod_p              not from Geodesist-P (default)
+        +TBnr                use 0x68 TurboBinary data (normal-rate observable record) (default)
+        -TBnr                don&#39;t use 0x68 TurboBinary data
+        +TBLC                use LC (0xde) TurboBinary data
+        -TBLC                don&#39;t use LC (0xde) TurboBinar data (default)
+        +TB1s                use 1-sec (0x1a) TurboBinary data)
+        -TB1s                don&#39;t use 1-sec (0x1a) TurboBinary data (default)
+        +TBhr                use high-rate (0xdb, 0xdc) TurboBinary data
+        -TBhr                don&#39;t use high-rate (0xdb, 0xdc) TurboBinary data (default)
+        +TBfe_ff             recognize header/trailer records (0xff, 0xfe) TurboBinary records (default)
+        -TBfe_ff             ignore 0xff, 0xfe records
+        +TB_ca_fix           apply CA offset fix to 0x68 TurboBinary records (before ~1 Dec 92)
+        -TB_ca_fix           use modern (post-1 Dec 92( CA translation of 0x68 TurboBinary records (default)
+        +v[erify]            verify conformance to input format standard to stdout
+        -v[erify]            output RINEX standard or other (such as qc output) (default)
+        +rx_state            output any receiver state parameters to stdout
+        -rx_state            output RINEX standard or other (such as qc output) (default)
+        -week #              set GPS week to initial value # for native format translation (default = best guess)
+        +warn[ings]          dump any warnings to stderr (default)
+        -warn[ings]          don&#39;t dump any warnings to stderr
+        +notice[s]           dump any notices to stderr (default)
+        -notice[s]           don&#39;t dump any notices to stderr
+        +quiet               quiet stdout/stderr qc mode; automatically sets -warn[ings] and -notice[s]
+        -quiet               normal stdout/stderr qc output (default)
+        +meta[data]          produce UNAVCO archive raw metadata table
+        -meta[data]          don&#39;t produce UNAVCO archive raw metadata table (default)
+        +mds                 show short metadata summary
+        -mds                 don&#39;t show short metadata summary (default)
+        +mdf                 show probable format
+        -mdf                 don&#39;t show probable format (default)
+        +phc                 output all RINEX post-header comments (default)
+        -phc                 suppress RINEX post-header comments
+        -base[year] #        change epoch base year to # A.D. (default = 1980)
+                -O.sum[mary] s           for OBS file(s) and stdin not used as input, put summary at beginning of output (two passes)
+                -O.sum[mary] e           for OBS file(s), put summary at end of output (requires only one pass)
+                -O.an &#34;str&#34;              set OBS antenna number to &#34;str&#34;
+                -O.at &#34;str&#34;              set OBS antenna type to &#34;str&#34;
+                -O.px[WGS84xyz,m] x y z  set OBS antenna WGS 84 position to x y z (in meters)
+                -O.pg[eo,ddm] lat lon el set OBS antenna WGS 84 position to lat lon elevation (degrees degrees meters)
+                -O.pe[hEN,m] h E N       set OBS antenna position eccentricities to h E N (in meters)
+                -O.mov[ing] 1            force OBS antenna position to be in kinematic (roving) state initially
+                -O.ag[ency] &#34;str&#34;        set OBS operating agency to &#34;str&#34;
+                +O.c[omment] &#34;str&#34;       append OBS comment &#34;str&#34;
+                -O.dec[imate] #          modulo decimation of OBS epochs to # time units
+                                           # = 30s results in epochs nominally at 00 and 30 seconds
+                -O.def_wf i j            set OBS default wavelength factors to i and j
+                -O.mod_wf i j n {SV1 SV2 ... SVn}  set OBS modified wavelength factors to i and j of n SVs
+                -O.e[nd] Y M D h m s     set OBS end time (last epoch) to Y M D h m s
+                -O.int[erval,sec] #      set OBS observation interval to # ( &gt; 0.) seconds
+                -O.leap #                set OBS leap seconds to #
+                -O.mn &#34;str&#34;              set OBS monument number to &#34;str&#34;
+                -O.mo[nument] &#34;str&#34;      set OBS monument name to &#34;str&#34;
+                -O.o[perator] &#34;str&#34;      set OBS operator name to &#34;str&#34;
+                -O.rename_obs &#34;str&#34;      rename OBS observables to &#34;str&#34;
+                                           &#34;str&#34; = L1L2C1P2 renames 4 observables to be L1 L2 C1 P2, and in that order
+                -O.obs[_types] &#34;str&#34;     change OBS observables to &#34;str&#34;
+                                           &#34;str&#34; = L1L2C1P2 sets 4 observables to be L1 L2 C1 P2, and in that order
+                -O.rn &#34;str&#34;              set OBS receiver number to &#34;str&#34;
+                -O.rt &#34;str&#34;              set OBS receiver type to &#34;str&#34;
+                -O.rv &#34;str&#34;              set OBS receiver firmware version to &#34;str&#34;
+                -O.r[un_by] &#34;str&#34;        set OBS run by to &#34;str&#34;
+                -O.s[ystem] #            set OBS satellite system to # (= G, R, S, T, or M)
+                -O.sl[ant] s d dh        set OBS antenna position eccentricities to dh+sqrt(s^2 - (d/2)^2) 0 0 (in meters)
+                -O.st[art] Y M D h m s   set OBS start time (first epoch) to Y M D h m s
+                -N.a[lpha] a0 a1 a2 a3   set NAV ionosphere alpha parameters to a0 a1 a2 a3
+                -N.b[eta] b0 b1 b2 b3    set NAV ionosphere beta parameters to b0 b1 b2 b3
+                +N.c[omment] &#34;str&#34;       append NAV comment &#34;str&#34;
+                -N.corr[_GLO] yr mon day secset GLONASS NAV correction to system time to yr mon day sec
+                -N.corr_SBAS yr mon day sec set SBAS NAV correction to system time to yr mon day sec
+                -N.dec[imate] #          modulo decimation of NAV ToE epochs to # time units
+                                           # = 12h results in ToE epochs at 00 and 12 hours
+                -N.leap #                set NAV leap seconds to #
+                -N.r[un_by] &#34;str&#34;        set NAV run by to &#34;str&#34;
+                -N.s[ystem] #            set NAV satellite system to # (= G, R, S)
+                -N.UTC A0 A1 t w         set NAV UTC time model to A0 A1 t w
+                +M.c[omment] &#34;str&#34;       append MET comment &#34;str&#34;
+                -M.dec[imate] #          modulo decimation of MET epochs to # time units
+                                           # = 15m results in epochs at 00, 15, 30, and 45 minutes
+                -M.int[erval,sec] #      set MET observation interval to # ( &gt; 0.) seconds
+                -M.l[ast_epoch] &lt;GPSweek&gt;:&lt;dow&gt;:&lt;sec&gt;    set MET last epoch to &lt;GPSweek&gt;:&lt;dow&gt;:&lt;sec&gt;
+                -M.mn &#34;str&#34;              set MET monument number to &#34;str&#34;
+                -M.mo[nument] &#34;str&#34;      set MET monument name to &#34;str&#34;
+                +M.mod[el/type/acc] &#34;obs&#34; &#34;model&#34; &#34;type&#34; accuracy  set &#34;obs&#34; MET sensor mod/type/acc to &#34;model&#34; &#34;type&#34; accuracy
+                                           &#34;obs&#34; = HR, PR, TD, or ZW
+                -M.rename_obs &#34;str&#34;      rename MET observables to &#34;str&#34;
+                                           &#34;str&#34; = TD+HR+PR renames 3 observables to be TD HR PR, and in that order
+                -M.obs[_types] &#34;str&#34;     change MET observables to &#34;str&#34;
+                                           &#34;str&#34; = TD+HR+PR sets 3 observables to be TD HR PR, and in that order
+                +M.pos[ition] &#34;obs&#34; x y z h  set &#34;obs&#34; MET sensor XYZ/H to x y z h
+                                           &#34;obs&#34; = HR, PR, TD, or ZW
+                -M.r[un_by] &#34;str&#34;        set MET run by to &#34;str&#34;
+        -qc                  don&#39;t do quality check (default)
+        +qc                  quality checking (w/ following options):
+                +ap                      turn average position on
+                -ap                      don&#39;t do average position (default)
+                +eep                     turn every epoch position (silent) on
+                -eep                     don&#39;t do silent every epoch position (default)
+                +eepx                    turn every epoch position (xyz cartesian)on
+                -eepx                    don&#39;t do xyz every epoch position (default)
+                +eepg                    turn every epoch position (geographical) on
+                -eepg                    don&#39;t do geographical every epoch position (default)
+                +cct                     report coarse code pseudorange observable totals (default)
+                -cct                     report coarse code pseudorange subtotals (no precise code pseudorange)
+                +cl[ock_slips]           turn clock n-msec slip detection on (default)
+                -cl[ock_slips]           don&#39;t do clock n-msec slip detection
+                -code_sigmas #           set maximum tolerace for code rejection to # (default = 2.0)
+                +data[indicators]        turn data indicators on qc ASCII plot on (default)
+                -data[indicators]        don&#39;t use data indicators on qc ASCII plot
+                -eps[ilon] #             set machine epsilon to # (default = 1.387779e-17)
+                +hor[izon]               when possible, show SV information down to horizon (default)
+                -hor[izon]               show only observed SV information
+                +ion                     compute L2-ionospheric observable (default)
+                -ion                     don&#39;t compute L2-ionospheric observables
+                +iod                     compute L2-ionospheric derivative (default)
+                -iod                     don&#39;t compute L2-ionospheric derivative
+                +tec                     compute TEC observable
+                -tec                     don&#39;t compute TEC observables (default)
+                -bins #                  use # elevation bins between horizon and zenith for all ion, mp, and sn observables (default = 18)
+                -ion_bins #              use # elevation bins between horizon and zenith for ionospheric observable (default = 18)
+                -ion_jump[cm] #          set maximum L2-ionospheric change to be # cm (default = 1.000e+35)
+                -iod_jump[cm/min] #      set maximum L2-ionospheric time-rate of change to be # cm/minute (default = 400.0)
+                -gap_mn[min] #           set minimum gap allowed # minutes (default = 10.0)
+                -gap_mx[min] #           set maximum gap allowed w/o NAV info to # minutes (default = 90.0)
+                -glonass_n str           str = GLONASS SV and frequency number file
+                +l[ong_report]           write a long report file segment (default)
+                -l[ong_report]           don&#39;t write a long report file segment
+                +lli                     turn Loss-of-Lock indicator on (default)
+                -lli                     don&#39;t show Loss-of-Lock indicator
+                +ma                      turn multipath moving average on (default)
+                -ma                      don&#39;t use multipath moving average
+                +mask                    when possible, show SV information down to elevation mask
+                -mask                    show normal SV information (default)
+                -min_L1 #                set minimum allowable L1 S/N RINEX code to 0 &lt;= # &lt;= 9 (default = 0)
+                -min_L2 #                set minimum allowable L2 S/N RINEX code to 0 &lt;= # &lt;= 9 (default = 0)
+                -min_L5 #                set minimum allowable L5 S/N RINEX code to 0 &lt;= # &lt;= 9 (default = 0)
+                -min_SVs #               set minimum allowable SVs w/ 2 codes (per OBS epoch) to # for position attempt (default = 5)
+                +mp                      compute L1 and L2 multipath observables (default)
+                -mp                      don&#39;t compute L1 and L2 multipath observables
+                -mp1_rms[cm] #           set expected MP1 rms to # cm (default = 50.00)
+                -mp2_rms[cm] #           set expected MP2 rms to # cm (default = 65.00)
+                -mp15_rms[cm] #          set expected MP15 rms to # cm (default = 50.00)
+                -mp51_rms[cm] #          set expected MP51 rms to # cm (default = 65.00)
+                -mp_bins #               use # elevation bins between horizon and zenith for mulitpath (default = 18)
+                +mp_raw                  show raw multipath (no slip removal)
+                -mp_raw                  show multipath (if being done) w/ slip removal (default)
+                -mp_sigmas #             set minimum sigma threshold for mp slips to # sigmas (default = 4.0)
+                -mp_win #                set multipath moving average window to # (&lt; 65536) points (default = 50)
+                -mp_CA_AS[%rms] #        set % increase of multipath rms to # if CA or AS present (default = 100.0)
+                -msec_tol[msec] #        set millisecond clock slip tolerance to # msec (default = 1.00e-02)
+                -nav[file(s)] name       input NAV file(s) &#39;name&#39; for ephemeris data (to perform position calculations)
+                -p[ortrait][#[u]]        qc ASCII plot plot in &#39;portrait&#39; mode; bin length in # units u (default u == m[inutes])
+                -path_dt[min] #          set sampling of SV cubic spline fit to # minutes (default = 10)
+                +pl                      compute L1 and L2 pseudorange-phase observables
+                -pl                      don&#39;t compute L1 and L2 pseudorange-phase observables (default)
+                +plot                    write plot file(s) (default)
+                -plot                    don&#39;t write plot file(s)
+                +pos[ition]              find antenna position and terminate teqc ASAP
+                -pos[ition]              run teqc normally (default)
+                -pos_conv[m] #           set position convergence to # ( &gt; 0) meters (default = 1.000000e+00 m)
+                -pos_jump[m] #           set position jump detection to # ( &gt; 0) meters (default = 1.000000e+05 m)
+                +rep[ort]                write a report file (default)
+                -rep[ort]                don&#39;t write any report file
+                +reset                   find antenna position and re-qc RINEX OBS file (default)
+                -reset                   only one pass of each RINEX OBS file allowed (default if using stdin)
+                -root str                supply filename root for ancillary files as str
+                +rs                      compute rise and set times of each SV w/ NAV info (default)
+                -rs                      don&#39;t compute rise and set times
+                +s[hort_report]          write a short report file segment (default)
+                -s[hort_report]          don&#39;t write a short report file segment
+                -set_hor[izon,deg] #     set elevation horizon to # degrees (default = 0.00)
+                -set_mask[deg] #         set elevation mask to # degrees (default = 10.00)
+                -set_comp[arison,deg] #  set elevation comparison to # degrees (default = 25.00)
+                -slips name              slip details written to file name
+                +sn[ratio]               compute S/N observables (default)
+                -sn[ratio]               don&#39;t compute S/N observables
+                -sn_bins #               use # elevation bins between horizon and zenith for S/N (default = 18)
+                +ssv                     give individual SUM lines for each SV
+                -ssv                     no individual SUM lines for each SV (default)
+                +sym[bol_codes]          dump symbol codes and hierarchy for short report ASCII time plot
+                -sym[bol_codes]          don&#39;t dump symbol codes and hierarchy (default)
+                -w[idth] #               set time width of qc ASCII plot to 0 &lt; # &lt; 256 (default = 72)
+                +Y[-code]                Y-code receiver expected
+                -Y[-code]                P-code receiver expected (possible tracking of P-codes w/ A/S on) (default)
+                -qcq                     don&#39;t do quality check, quick or otherwise (default)
+                +qcq                     do quality check w/ no plots or report unless explicitly specified</pre></td></tr></table>
+</div>
+</div>
+<h2 id="2-rnx2crx-crx2rnx-观测数据解压缩">2 rnx2crx＆crx2rnx - 观测数据解压缩</h2>
+
+<h3 id="2-1-参考地址">2.1 参考地址</h3>
+
+<p><a href="http://sopac.ucsd.edu/hatanaka.shtml">http://sopac.ucsd.edu/hatanaka.shtml</a></p>
+
+<p><a href="http://terras.gsi.go.jp/ja/crx2rnx.html">http://terras.gsi.go.jp/ja/crx2rnx.html</a></p>
+
+<h3 id="2-2-使用">2.2 使用</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Usage: crx2rnx.exe [file] [-] [-f] [-s] [-h]
+    stdin and stdout are used if input file name is not given.
+    -  : output to stdout
+    -f : force overwrite of output file
+    -s : skip strange epochs (default:stop with error)
+           This option may be used for salvaging usable data when middle of
+           the Compact RINEX file is missing. The data after the missing part,
+           are, however, useless until the compression operation of all data
+           are initialized at some epoch. Combination with use of -e option
+           of RNX2CRX (ver.4.0 or after) may be effective.
+           Caution : It is assumed that no change in # of data types
+                     happens in the lost part of the data.
+    -h : display help message
+
+    exit code = 0 (success)
+              = 1 (error)
+              = 2 (warning)
+    [version : ver.4.0.7]</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Usage: rnx2crx.exe [file] [-] [-f] [-e # of epochs] [-s] [-h]
+    stdin and stdout are used if input file name is not given.
+    -       : output to stdout
+    -f      : force overwrite of output file
+    -e #    : initialize the compression operation at every # epochs
+              When some part of the Compact RINEX file is lost, the data
+              can not be recovered thereafter until all the data arc are
+              initialized for differential operation. This option may be used to
+              increase chances to recover parts of data by using an option of
+              CRX2RNX(ver. 4.0 or after) with cost of increase of file size.
+    -s      : warn and skip strange epochs (default: stop with error status)
+    -h      : display this message
+
+    exit code = 0 (success)
+              = 1 (error)
+              = 2 (warning)
+    [version : ver.4.0.7]</pre></td></tr></table>
+</div>
+</div>
+<h2 id="3-gfzrnx-rinex-gnss数据转换和操作工具箱">3 GFZRNX - RINEX GNSS数据转换和操作工具箱</h2>
+
+<h3 id="3-1-参考网址">3.1 参考网址</h3>
+
+<p>官网
+<a href="http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:1577894">http://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=escidoc:1577894</a></p>
+
+<p>下载<a href="http://semisys.gfz-potsdam.de/semisys/scripts/download/index.php">http://semisys.gfz-potsdam.de/semisys/scripts/download/index.php</a></p>
+
+<h3 id="3-2-简介">3.2 简介</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">GFZRNX是全球导航卫星系统（GNSS）的接收机独立交换格式（RINEX）提供数据编辑的软件工具箱。支持rinex2和rinex3版本。
+
+下面RINEX数据类型的支持：
+-观测数据
+-导航数据
+-气象资料
+
+支持以下全球和区域卫星系统：
+GPS - 全球定位系统（美国）
+GLONASS - GLObal NAvigation卫星系统（RUS） 
+BEIDOU - 中国全球和区域导航卫星系统（CHN）
+GALILEO - 欧洲全球导航卫星系统
+IRNSS - 印度区域导航卫星系统（IND）
+QZSS - 准天顶卫星系统（JAP）
+
+支持以下操作：
+- RINEX数据检查和修复
+- RINEX数据格式转换（版本3到2，反之亦然）
+- RINEX数据拼接
+- RINEX数据分割
+- RINEX数据统计生成
+- RINEX数据处理如：（1）数据采样，（2）观测类型选择，（3）卫星系统选择，（4）消除整体空或稀疏观测类型
+- 输出数据上的自动版本相关文件命名
+- RINEX数据头编辑
+- RINEX数据元数据提取
+- RINEX数据比较
+
+支持以下操作系统：
+- Microsoft Windows（64）
+- Microsoft Windows（32）
+- Apple macOS 
+- ORACLE Solaris（SPARC）
+- ORACLE Solaris（i86）
+- Linux（64）
+- Linux（32）</pre></td></tr></table>
+</div>
+</div>
+<h3 id="3-3-使用">3.3 使用</h3>
+
+<ul>
+<li><p>GNSShelp网站博客 <a href="http://www.gnss.help/categories/GFZRNX/">http://www.gnss.help/categories/GFZRNX/</a></p></li>
+
+<li><p><a href="https://www.gsir.top/downloads/">gfzrnx快速使用-ch</a></p></li>
+</ul>
+
+<h2 id="4-unixtools-v1-0">4 UnixTools v1.0</h2>
+
+<h3 id="4-1-网址">4.1 网址</h3>
+
+<p>下载地址 <a href="https://gmt-china.org/datas/UnixTools.zip">https://gmt-china.org/datas/UnixTools.zip</a></p>
+
+<h3 id="4-2-简介">4.2 简介</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># UnixTools常用包
+#
+# 本压缩包为Windows用户提供了Unix下常用的工具。
+# 解压后将其所有exe文件复制到系统路径下，并保证该路径位于PATH内即可使用这些工具。
+#
+# 本压缩包内所有程序均提取自 [ms4w](http://www.ms4w.com/download.html)
+# 详情请访问 http://gmt-china.org/blog/unix-tools-for-windows
+#
+
+程序名       说明
+--------------------------------
+cat.exe      显示文本内容
+cut.exe      从指定文本中截取文本并输出至标准输出
+gawk.exe     处理文本信息的编程语言工具
+grep.exe     从指定文本或标准输入中识别并截取出特定字段等
+head.exe     输出一个或多个指定文本的前n行
+join.exe     将两个文件中文本一致的行连接并输出
+md5sum.exe   检验文本的MD5摘要
+paste.exe    并排输出两个文件的内容
+printf.exe   按C语言格式输出文本
+sed.exe      文本处理工具
+sort.exe     对文本文档进行排序
+split.exe    以行为单位切割文件
+tail.exe     显示文件尾端的n行数据
+uniq.exe     从文本中去除或禁止重复行
+wc.exe       输出指定文件的行数、字数和文本数据大小</pre></td></tr></table>
+</div>
+</div>
+<h3 id="4-3-unxutils-windows下unix工具包">4.3 unxutils - windows下unix工具包</h3>
+
+<p><a href="https://sourceforge.net/projects/unxutils/">https://sourceforge.net/projects/unxutils/</a></p>
+
+<p>Win32的GNU实用程序，包涵一下工具，几乎涵盖Unix工具。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">agrep.exe         dd.exe         gplay.exe       makemsg.exe   rmdir.exe  unexpand.exe
+ansi2knr.exe      df.exe         grep.exe        man.exe       sdiff.exe  uniq.exe
+basename.exe      diff.exe       gsar.exe        md5sum.exe    sed.exe    unrar.exe
+bc.exe            diff3.exe      gunzip.exe      mkdir.exe     seq.exe    unshar.exe
+bison.exe         dircolors.exe  gzip.exe        mkfifo.exe    shar.exe   unzip.exe
+bunzip2.exe       dirname.exe    head.exe        mknod.exe     sleep.exe  uudecode.exe
+bzip2.exe         du.exe         id.exe          mv.exe        sort.exe   uuencode.exe
+bzip2recover.exe  echo.exe       indent.exe      mvdir.exe     split.exe  wc.exe
+cat.exe           egrep.exe      install.exe     nl.exe        stego.exe  wget.exe
+chgrp.exe         env.exe        join.exe        od.exe        su.exe     wget.hlp
+chmod.exe         expand.exe     jwhois.exe      paste.exe     sum.exe    which.exe
+chown.exe         expr.exe       less.exe        patch.exe     sync.exe   whoami.exe
+cksum.exe         factor.exe     lesskey.exe     pathchk.exe   tac.exe    xargs.exe
+cmp.exe           fgrep.exe      libfl.a         pclip.exe     tail.exe   yes.exe
+comm.exe          find.exe       libfl.lib       pr.exe        tar.exe    zcat.exe
+compress.exe      flex.exe       ln.exe          printenv.exe  tee.exe    zip.exe
+cp.exe            fmt.exe        logname.exe     printf.exe    test.exe
+csplit.exe        fold.exe       ls.exe          pwd.exe       touch.exe
+cut.exe           fsplit.exe     m4.exe          recode.exe    tr.exe
+date.exe          gawk.exe       make.exe        rm.exe        type.exe
+dc.exe            gclip.exe      makedepend.exe  rman.exe      uname.exe</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>不断发现，不断学习，不断更新。</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">GSir</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-12-02</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%A2%84%E5%A4%84%E7%90%86/">预处理</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2018-12-03-powershell%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">powershell快速入门介绍</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/">
+            <span class="next-text nav-default">GAMIT基线文件NRMS统计</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'Gsir';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gsir_ying@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gsir-ying" class="iconfont icon-github" title="github"></a>
+      <a href="http://blog.sina.com.cn/u/5651674758" class="iconfont icon-weibo" title="weibo"></a>
+  <a href="https://gsir.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Gsir</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GAMIT基线重复性分析脚本 - Gsir</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="GSir" /><meta name="description" content="GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的" /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GAMIT基线重复性分析脚本" />
+<meta property="og:description" content="GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/" /><meta property="article:published_time" content="2018-11-04T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-21T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="GAMIT基线重复性分析脚本">
+<meta itemprop="description" content="GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的">
+
+
+<meta itemprop="datePublished" content="2018-11-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-11-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2409">
+
+
+
+<meta itemprop="keywords" content="GAMIT-GLOBK,基线重复性,Matlab," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GAMIT基线重复性分析脚本"/>
+<meta name="twitter:description" content="GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">碧海青天夜夜心</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/downloads/">
+        <li class="mobile-menu-item">下载</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">碧海青天夜夜心</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/downloads/">下载</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GAMIT基线重复性分析脚本</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-04 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"> 数据处理 </a>
+            <a href="/categories/gamit-globk/"> GAMIT-GLOBK </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#数学模型">数学模型</a></li>
+<li><a href="#matlab脚本-baserep-m">Matlab脚本 BaseRep.m</a></li>
+<li><a href="#matlab脚本使用方法">Matlab脚本使用方法</a></li>
+<li><a href="#python脚本-baserep-py">Python脚本 BaseRep.py</a></li>
+<li><a href="#python脚本baserep-py修改">python脚本BaseRep.py修改</a></li>
+<li><a href="#其他">其他</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<blockquote>
+<p>GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的脚本。
+后期使用Matlab脚本发现bug，如果每天的基线数量不一致会报错，且运行速度太慢。改用python重写，修改bug。</p>
+</blockquote>
+
+<h2 id="数学模型">数学模型</h2>
+
+<p>参考文献：[1]吕成亮,王晓珅.GAMIT基线解算质量指标分析[J].城市勘测,2015(06):59-62.</p>
+
+<p><img src="../images/2018110402.png" alt="" /></p>
+
+<h2 id="matlab脚本-baserep-m">Matlab脚本 BaseRep.m</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    %--------------------------------------------------------------------------
+    % function: Baseline repeatability analysis
+    % by:       Ren Yingying, Tongji Univerity
+    % email     gsir_ying@163.com
+    % date:     2018/10/28
+    %--------------------------------------------------------------------------
+    % usage:   ready ofile.list &#39;bash command: ls o* &gt; ofile.list&#39;
+    %           now run
+    %--------------------------------------------------------------------------
+    clc;clear;
+    ofilelist = textread(&#39;ofile.list&#39;,&#39;%s&#39;);
+    [mlist,nlist] = size(ofilelist);
+    dataxyz=[];
+    dataneu=[];
+    % get xyz baseline lines
+    for i = 1:mlist
+        ofile = ofilelist{i};
+        fid=fopen(ofile,&#39;r&#39;);
+        mline = 0;
+        while ~feof(fid)
+        strline = fgetl(fid);
+        temp = strfind(strline,&#39;X X &#39;);% only fixed-solution
+        if (~isempty(temp))
+            mline = mline + 1;
+            dataxyz{i,mline} = strline;
+        end
+        end
+        fclose(fid);
+    end
+    % get neu baseline lines
+    for i = 1:mlist
+        ofile = ofilelist{i};
+        fid=fopen(ofile,&#39;r&#39;);
+        mline = 0;
+        while ~feof(fid)
+        strline = fgetl(fid);
+        temp = strfind(strline,&#39;X N &#39;);% only fixed-solution
+        if (~isempty(temp))
+            mline = mline + 1;
+            dataneu{i,mline} = strline;
+        end
+        end
+        fclose(fid);
+    end
+    [basetime,basenum] = size(dataxyz);
+    basexyz = [];
+    % get baseline name
+    for j=1:basenum
+        site{j} = dataxyz{1,j}(1:10);
+    end
+    % get baseline xyz data, calculate baserep
+    for j=1:basenum
+        for i=1:basetime
+            temp = dataxyz{i,j};
+            basexyz(j,i,1) = str2double (temp (22:36));
+            basexyz(j,i,2) = str2double (temp (39:48));
+            basexyz(j,i,3) = str2double (temp (50:64));
+            basexyz(j,i,4) = str2double (temp (67:76));
+            basexyz(j,i,5) = str2double (temp (78:92));
+            basexyz(j,i,6) = str2double (temp (95:104));
+            basexyz(j,i,7) = str2double (temp (106:120));
+            basexyz(j,i,8) = str2double (temp (123:133));
+        end
+        x = basexyz(j,:,1);
+        y = basexyz(j,:,3);
+        z = basexyz(j,:,5);
+        l = basexyz(j,:,7);
+        px = 1./(basexyz(j,:,2).^2);
+        py = 1./(basexyz(j,:,4).^2);
+        pz = 1./(basexyz(j,:,6).^2);
+        pl = 1./(basexyz(j,:,8).^2);
+        
+        xbar = sum(px.*x)/sum(px);
+        sgmx = sqrt(sum(px.*(x-xbar).^2)/sum(px));
+        ybar = sum(py.*y)/sum(py);
+        sgmy = sqrt(sum(py.*(y-ybar).^2)/sum(py));
+        zbar = sum(pz.*z)/sum(pz);
+        sgmz = sqrt(sum(pz.*(z-zbar).^2)/sum(pz));
+        lbar = sum(pl.*l)/sum(pl);
+        rl = sqrt(basetime/(basetime-1)*sum(pl.*(l-lbar).^2)/sum(pl));
+        rr = rl/lbar;
+        
+        res(j,1) = sgmx;
+        res(j,2) = sgmy;
+        res(j,3) = sgmz;
+        res(j,4) = rl;
+        res(j,5) = rr;
+    end
+    % get baseline neu data, calculate baserep, wmean,nrms,wrms
+    for j=1:basenum
+        for i=1:basetime
+            temp = dataneu{i,j};
+            baseneu(j,i,1) = str2double (temp (22:36));
+            baseneu(j,i,2) = str2double (temp (39:48));
+            baseneu(j,i,3) = str2double (temp (50:64));
+            baseneu(j,i,4) = str2double (temp (67:76));
+            baseneu(j,i,5) = str2double (temp (78:92));
+            baseneu(j,i,6) = str2double (temp (95:104));
+            baseneu(j,i,7) = str2double (temp (106:120));
+            baseneu(j,i,8) = str2double (temp (123:133));
+        end
+        x = baseneu(j,:,1);
+        y = baseneu(j,:,3);
+        z = baseneu(j,:,5);
+        l = baseneu(j,:,7);
+        px = 1./(baseneu(j,:,2).^2);
+        py = 1./(baseneu(j,:,4).^2);
+        pz = 1./(baseneu(j,:,6).^2);
+        pl = 1./(baseneu(j,:,8).^2);
+        
+        xbar = sum(px.*x)/sum(px);
+        sgmx = sqrt(sum(px.*(x-xbar).^2)/sum(px));
+        ybar = sum(py.*y)/sum(py);
+        sgmy = sqrt(sum(py.*(y-ybar).^2)/sum(py));
+        zbar = sum(pz.*z)/sum(pz);
+        sgmz = sqrt(sum(pz.*(z-zbar).^2)/sum(pz));
+        lbar = sum(pl.*l)/sum(pl);
+        rl = sqrt(basetime/(basetime-1)*sum(pl.*(l-lbar).^2)/sum(pl));
+        rr = rl/lbar;
+        
+        res(j,6) = sgmx;
+        res(j,7) = sgmy;
+        res(j,8) = sgmz;
+        res(j,9) = rl;
+        res(j,10) = rr;
+    end
+    % R = a+bL
+    %***************************************************************plot ploy 
+    % get baserep result in BaseRep_res.txt
+    fid=fopen(&#39;BaseRep_res.txt&#39;,&#39;w&#39;);
+    fprintf(fid,&#39;%s %s %s %s %s %s %s %s %s\r\n&#39;,&#39;BaseName   &#39;,&#39;X      &#39;,...
+        &#39;Y       &#39;,&#39;Z       &#39;,&#39;N       &#39;,&#39;E       &#39;,&#39;U       &#39;,&#39;L       &#39;,&#39;RL&#39;);
+    for j=1:basenum
+        fprintf(fid,&#39;%s %f %f %f %f %f %f %f %d\r\n&#39;,site{j},res(j,1),...
+            res(j,2),res(j,3),res(j,6),res(j,7),res(j,8),res(j,9),res(j,10));
+    end
+    fclose(fid);
+    open(&#39;BaseRep_res.txt&#39;)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="matlab脚本使用方法">Matlab脚本使用方法</h2>
+
+<p>利用bash终端工具生成GAMMIT基线解算的o文件列表，然后使用Malab直接运行脚本即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    cd work
+    ls o* &gt; ofile.list</pre></td></tr></table>
+</div>
+</div>
+<p>生成结果如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    BaseName    X       Y        Z        N        E        U        L        RL
+    BJFS_SHAO  0.002576 0.003717 0.003039 0.001897 0.002726 0.004178 0.000647 6.108449e-10
+    BJFS_URUM  0.001783 0.004473 0.007446 0.006297 0.001809 0.005484 0.002529 1.064979e-09
+    SHAO_URUM  0.002229 0.007996 0.010408 0.007362 0.003236 0.008774 0.002384 7.391489e-10</pre></td></tr></table>
+</div>
+</div>
+<h2 id="python脚本-baserep-py">Python脚本 BaseRep.py</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># python3.7
+# coding=utf-8
+#------------------------------------------------------------------------------
+# function: GAMIT ofile baseline repeatability analysis
+# by:       Ren Yingying, Tongji Univerity
+# email     gsir_ying@163.com
+# date:     2018/11/14
+#------------------------------------------------------------------------------
+# usage:    reday ofile content includes ofiles
+#           now run
+#------------------------------------------------------------------------------
+# ref:      
+#------------------------------------------------------------------------------
+import sys
+import os
+from numpy import *
+
+# get all fix result
+filelist = os.listdir(&#39;ofile&#39;)
+count_file = 0
+str_xyz = &#39;&#39;
+str_neu = &#39;&#39;
+for file in filelist :
+    count_file += 1
+    file_object = open(&#39;ofile\\&#39; + file)
+    for line in file_object.readlines():
+            if (line.find(&#39;Correlations (X-Y,X-Z,Y-Z)&#39;) &gt; 0):
+                    str_xyz += line
+            if (line.find(&#39;Correlations (N-E,N-U,E-U)&#39;) &gt; 0):
+                    str_neu += line
+            
+    file_object.close()
+ 
+file_object1 = open(&#39;xyz.txt&#39;,&#39;w&#39;)
+file_object1.write(str_xyz)
+file_object1.close()
+file_object1 = open(&#39;neu.txt&#39;,&#39;w&#39;)
+file_object1.write(str_neu)
+file_object1.close()
+
+# sort all fix result
+file_object2 = open(&#39;xyz.txt&#39;,&#34;r+&#34;);
+lines = file_object2.readlines();
+lines.sort();
+for line in lines:
+    file_object2.seek(0)
+file_object2.writelines(lines)
+file_object2.close();
+
+file_object2 = open(&#39;neu.txt&#39;,&#34;r+&#34;);
+lines1 = file_object2.readlines();
+lines1.sort();
+for line in lines1:
+    file_object2.seek(0)
+file_object2.writelines(lines1)
+file_object2.close();
+
+name = []
+name.append(lines[0][0:9])
+sum_lines= min(len(lines),len(lines1))
+for i in range(1,sum_lines):
+    if (lines[i][0:9] != lines[i-1][0:9]):
+        name.append(lines[i][0:9])
+
+# calculate each baseline repeatability
+res = zeros((len(name),8))
+count_name = -1
+for site in name:
+    count_name += 1
+    dataxyz = []
+    dataneu = []
+    for i in range(0,sum_lines):
+        if (lines[i][0:9] == site):
+            dataxyz.append(lines[i])
+        if (lines[i][0:9] == site):
+            dataneu.append(lines1[i])
+    row = len(dataxyz)
+    x = zeros(row)
+    sx = zeros(row)
+    y = zeros(row)
+    sy = zeros(row)
+    z = zeros(row)
+    sz = zeros(row)
+    l = zeros(row)
+    sl = zeros(row)
+    n = zeros(row)
+    sn = zeros(row)
+    e = zeros(row)
+    se = zeros(row)
+    u = zeros(row)
+    su = zeros(row)
+
+    for i in range(row):
+          dataxyzline = dataxyz[i].split()
+          dataneuline = dataneu[i].split()
+          temp = []
+          temp.append(float(dataxyzline[3]))
+          temp.append(float(dataxyzline[5]))
+          temp.append(float(dataxyzline[7]))
+          temp.append(float(dataxyzline[9]))
+          temp.append(float(dataxyzline[11]))
+          temp.append(float(dataxyzline[13]))
+          temp.append(float(dataxyzline[15]))
+          temp.append(float(dataxyzline[17]))
+          temp.append(float(dataneuline[3]))
+          temp.append(float(dataneuline[5]))
+          temp.append(float(dataneuline[7]))
+          temp.append(float(dataneuline[9]))
+          temp.append(float(dataneuline[11]))
+          temp.append(float(dataneuline[13]))
+          x[i] = temp[0]
+          sx[i] = temp[1]
+          y[i] = temp[2]
+          sy[i] = temp[3]
+          z[i] = temp[4]
+          sz[i] = temp[5]
+          l[i] = temp[6]
+          sl[i] = temp[7]
+          n[i] = temp[8]
+          sn[i] = temp[9]
+          e[i] = temp[10]
+          se[i] = temp[11]
+          u[i] = temp[12]
+          su[i] = temp[13]
+           
+    px = 1 / (sx ** 2)
+    py = 1 / (sy ** 2)
+    pz = 1 / (sz ** 2)
+    pl = 1 / (sl ** 2)
+    pn = 1 / (se ** 2)
+    pe = 1 / (sn ** 2)
+    pu = 1 / (su ** 2)
+
+    xbar = sum(px * x) / sum(px)
+    sgmx = sqrt(sum(px * (x - xbar) ** 2) / sum(px))
+    ybar = sum(py * y) / sum(py)
+    sgmy = sqrt(sum(py * (y - ybar) ** 2) / sum(py))
+    zbar = sum(pz * z) / sum(pz)
+    sgmz = sqrt(sum(pz * (z - zbar) ** 2) / sum(pz))
+    lbar = sum(pl * l) / sum(pl);
+    rl = sqrt( row / (row - 1) * sum(pl * (l-lbar) ** 2) / sum(pl))
+    rr = rl / lbar   
+    nbar = sum(pn * n) / sum(pn)
+    sgmn = sqrt(sum(pn * (n - nbar) ** 2) / sum(pn))
+    ebar = sum(pe * e) / sum(pe)
+    sgme = sqrt(sum(pe * (e - ebar) ** 2) / sum(pe))
+    ubar = sum(pu * u) / sum(pu)
+    sgmu = sqrt(sum(pu * (u - ubar) ** 2) / sum(pu))
+
+    res[count_name][0] = sgmx
+    res[count_name][1] = sgmy
+    res[count_name][2] = sgmz
+    res[count_name][3] = rl
+    res[count_name][4] = rr
+    res[count_name][5] = sgmn
+    res[count_name][6] = sgme
+    res[count_name][7] = sgmu
+
+# write result in file
+count_name = -1
+str_res = &#39;BaseName   X      Y       Z       N       E       U       L       RL\n&#39;
+for site in name:
+        count_name += 1
+        str_res += site + &#39; &#39; + str(&#39;%.5f&#39;% res[count_name][0]) + &#39; &#39; + str(&#39;%.5f&#39;% res[count_name][1]) + &#39; &#39;\
+        + str(&#39;%.5f&#39;% res[count_name][2]) +&#39; &#39; + str(&#39;%.5f&#39;% res[count_name][5]) + &#39; &#39; \
+        + str(&#39;%.5f&#39;% res[count_name][6]) + &#39; &#39; + str(&#39;%.5f&#39;% res[count_name][7]) + &#39; &#39; \
+        + str(&#39;%.5f&#39;% res[count_name][3]) + &#39; &#39; + str(&#39;%.4e&#39;% res[count_name][4]) + &#39;\n&#39;
+
+file_object3 = open(&#39;BaseRep.out&#39;,&#39;w&#39;)
+file_object3.write(str_res)
+file_object3.close() 
+
+# delele some temp files
+os.remove(&#39;neu.txt&#39;)
+os.remove(&#39;xyz.txt&#39;)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="python脚本baserep-py修改">python脚本BaseRep.py修改</h2>
+
+<blockquote>
+<p>不断学习，不断改进吧，一个小程序的bug就这么多，坚持下去。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># python3.7
+# coding=utf-8
+#------------------------------------------------------------------------------
+# function: GAMIT ofile baseline repeatability analysis
+# by:       Ren Yingying, Tongji Univerity
+# email     gsir_ying@163.com
+# date:    2018/11/14
+#------------------------------------------------------------------------------
+# usage:    reday ofile content includes ofiles
+#           now run
+#------------------------------------------------------------------------------
+# ref:      
+#------------------------------------------------------------------------------
+# modify：  2018-11-21  Calculate separately(XYZ or NEU)
+import sys
+import os
+from numpy import *
+
+# select print NEU or XYZ result，0 —— XYZ， 1 —— NEU
+isneu = 1
+# get all fix result
+if (isneu == 0):
+        str_find1 = &#39;X X&#39;
+        str_find2 = &#39;Correlations (X-Y,X-Z,Y-Z)&#39;
+else:
+        str_find1 = &#39;X N&#39;
+        str_find2 = &#39;Correlations (N-E,N-U,E-U)&#39;
+
+filelist = os.listdir(&#39;ofile&#39;)
+count_file = 0
+str_xyz = &#39;&#39;
+for file in filelist :
+    count_file += 1
+    file_object = open(&#39;ofile\\&#39; + file)
+    for line in file_object.readlines():
+            if ((line.find(str_find1) &gt; 0) and (line.find(str_find2) &gt; 0)):
+                    str_xyz += line
+            
+    file_object.close()
+ 
+file_object1 = open(&#39;xyz.txt&#39;,&#39;w&#39;)
+file_object1.write(str_xyz)
+file_object1.close()
+
+# sort all fix result
+file_object2 = open(&#39;xyz.txt&#39;,&#34;r+&#34;);
+lines = file_object2.readlines();
+lines.sort();
+for line in lines:
+    file_object2.seek(0)
+file_object2.writelines(lines)
+file_object2.close();
+
+
+name = []
+name.append(lines[0][0:9])
+sum_lines= len(lines)
+for i in range(1,sum_lines):
+    if (lines[i][0:9] != lines[i-1][0:9]):
+        name.append(lines[i][0:9])
+
+# calculate each baseline repeatability
+res = zeros((len(name),8))
+count_name = -1
+for site in name:
+    count_name += 1
+    dataxyz = []
+    for i in range(0,sum_lines):
+        if (lines[i][0:9] == site):
+            dataxyz.append(lines[i])
+    row = len(dataxyz)
+    x = zeros(row)
+    sx = zeros(row)
+    y = zeros(row)
+    sy = zeros(row)
+    z = zeros(row)
+    sz = zeros(row)
+    l = zeros(row)
+    sl = zeros(row)
+
+    for i in range(row):
+          dataxyzline = dataxyz[i].split()
+          temp = []
+          temp.append(float(dataxyzline[3]))
+          temp.append(float(dataxyzline[5]))
+          temp.append(float(dataxyzline[7]))
+          temp.append(float(dataxyzline[9]))
+          temp.append(float(dataxyzline[11]))
+          temp.append(float(dataxyzline[13]))
+          temp.append(float(dataxyzline[15]))
+          temp.append(float(dataxyzline[17]))
+          x[i] = temp[0]
+          sx[i] = temp[1]
+          y[i] = temp[2]
+          sy[i] = temp[3]
+          z[i] = temp[4]
+          sz[i] = temp[5]
+          l[i] = temp[6]
+          sl[i] = temp[7]
+           
+    px = 1 / (sx ** 2)
+    py = 1 / (sy ** 2)
+    pz = 1 / (sz ** 2)
+    pl = 1 / (sl ** 2)
+
+    xbar = sum(px * x) / sum(px)
+    sgmx = sqrt(sum(px * (x - xbar) ** 2) / sum(px))
+    ybar = sum(py * y) / sum(py)
+    sgmy = sqrt(sum(py * (y - ybar) ** 2) / sum(py))
+    zbar = sum(pz * z) / sum(pz)
+    sgmz = sqrt(sum(pz * (z - zbar) ** 2) / sum(pz))
+    lbar = sum(pl * l) / sum(pl);
+    rl = sqrt( row / (row - 1) * sum(pl * (l-lbar) ** 2) / sum(pl))
+    rr = rl / lbar   
+
+    res[count_name][0] = sgmx
+    res[count_name][1] = sgmy
+    res[count_name][2] = sgmz
+    res[count_name][3] = rl
+    res[count_name][4] = rr
+
+# write result in file
+count_name = -1
+if (isneu == 0):
+        str_res = &#39;BaseName   X       Y       Z       L       RL\n&#39;
+else:
+        str_res = &#39;BaseName   N       E       U       L       RL\n&#39;
+for site in name:
+        count_name += 1
+        str_res += site + &#39; &#39; + str(&#39;%.5f&#39;% res[count_name][0]) + &#39; &#39; + str(&#39;%.5f&#39;% res[count_name][1]) + &#39; &#39;\
+        + str(&#39;%.5f&#39;% res[count_name][2]) +&#39; &#39; + str(&#39;%.5f&#39;% res[count_name][3]) + &#39; &#39;\
+         + str(&#39;%.4e&#39;% res[count_name][4]) + &#39;\n&#39;
+
+file_object3 = open(&#39;BaseRep.out&#39;,&#39;w&#39;)
+file_object3.write(str_res)
+file_object3.close() 
+
+# delele some temp files
+os.remove(&#39;xyz.txt&#39;)</pre></td></tr></table>
+</div>
+</div></blockquote>
+
+<h2 id="其他">其他</h2>
+
+<blockquote>
+<p>01 本文程序仅对可选择模糊度固定或浮点基线解进行处理。02 其它求解基线重复性的方法会后续发布。</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">GSir</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-11-21</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/gamit-globk/">GAMIT-GLOBK</a>
+          <a href="/tags/%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7/">基线重复性</a>
+          <a href="/tags/matlab/">Matlab</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">读书笔记</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2018-11-04-vscode%E4%BD%BF%E7%94%A8/">
+            <span class="next-text nav-default">VScode使用</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'Gsir';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gsir_ying@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gsir-ying" class="iconfont icon-github" title="github"></a>
+      <a href="http://blog.sina.com.cn/u/5651674758" class="iconfont icon-weibo" title="weibo"></a>
+  <a href="https://gsir.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Gsir</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VScode on Gsir</title>
+    <link>https://gsir.top/tags/vscode/</link>
+    <description>Recent content in VScode on Gsir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://gsir.top/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VScode使用</title>
+      <link>https://gsir.top/post/2018-11-04-vscode%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gsir.top/post/2018-11-04-vscode%E4%BD%BF%E7%94%A8/</guid>
+      <description>持续更新VScode的介绍和使用，包含常用编程插件、扩展和工具，以及总结的使用技巧和快捷方式。 介绍 Visual Studio Code是一个轻量级但功能强大的源代码</description>
+    </item>
+    
+  </channel>
+</rss>

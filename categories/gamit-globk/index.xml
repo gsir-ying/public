@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GAMIT-GLOBK on Gsir</title>
+    <link>https://gsir.top/categories/gamit-globk/</link>
+    <description>Recent content in GAMIT-GLOBK on Gsir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 17 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://gsir.top/categories/gamit-globk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GAMIT基线文件NRMS统计</title>
+      <link>https://gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</guid>
+      <description>GAMIT解算的o文件包含浮点解和固定解的NRMS，利用python脚本提取所有o文件的NRMS，输出到文件nrms.txt，以便后续分析。</description>
+    </item>
+    
+    <item>
+      <title>gg辅助程序</title>
+      <link>https://gsir.top/post/2018-11-06-gg%E8%BE%85%E5%8A%A9%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gsir.top/post/2018-11-06-gg%E8%BE%85%E5%8A%A9%E7%A8%8B%E5%BA%8F/</guid>
+      <description>GAMIT-GLOBK自带的常用辅助程序（工具）使用介绍 cvframe 1 2 3 4 5 6 7 8 9 10 11 12 13 14 cvframe: 改变.vel文件中速度的参考框架的程序 运行字符串： %</description>
+    </item>
+    
+    <item>
+      <title>GAMIT基线重复性分析脚本</title>
+      <link>https://gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</guid>
+      <description>GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的</description>
+    </item>
+    
+  </channel>
+</rss>

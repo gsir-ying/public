@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>hugo&#43;github建立个人博客 - Gsir</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="GSir" /><meta name="description" content="详细讲述如何使用hugo&#43;github建立、生成、发布、维护个人静态博客。 01 git安装和使用 参考git官方文档 https://git-scm.com/ Git是一个免费的开源、分布" /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gsir.top/post/2018-11-03-hugo&#43;github%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="hugo&#43;github建立个人博客" />
+<meta property="og:description" content="详细讲述如何使用hugo&#43;github建立、生成、发布、维护个人静态博客。 01 git安装和使用 参考git官方文档 https://git-scm.com/ Git是一个免费的开源、分布" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gsir.top/post/2018-11-03-hugo&#43;github%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" /><meta property="article:published_time" content="2018-11-03T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-04T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="hugo&#43;github建立个人博客">
+<meta itemprop="description" content="详细讲述如何使用hugo&#43;github建立、生成、发布、维护个人静态博客。 01 git安装和使用 参考git官方文档 https://git-scm.com/ Git是一个免费的开源、分布">
+
+
+<meta itemprop="datePublished" content="2018-11-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-11-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1094">
+
+
+
+<meta itemprop="keywords" content="git,hugo,github," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="hugo&#43;github建立个人博客"/>
+<meta name="twitter:description" content="详细讲述如何使用hugo&#43;github建立、生成、发布、维护个人静态博客。 01 git安装和使用 参考git官方文档 https://git-scm.com/ Git是一个免费的开源、分布"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">碧海青天夜夜心</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/downloads/">
+        <li class="mobile-menu-item">下载</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">碧海青天夜夜心</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/downloads/">下载</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">hugo&#43;github建立个人博客</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-03 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%8D%9A%E5%AE%A2%E4%BA%BA%E7%94%9F/"> 博客人生 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#01-git安装和使用">01 git安装和使用</a></li>
+<li><a href="#02-hugo安装和使用">02 hugo安装和使用</a></li>
+<li><a href="#03-even下载和使用">03 even下载和使用</a></li>
+<li><a href="#04-github注册和使用">04 github注册和使用</a></li>
+<li><a href="#其他">其他</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<blockquote>
+<p>详细讲述如何使用hugo+github建立、生成、发布、维护个人静态博客。</p>
+</blockquote>
+
+<h2 id="01-git安装和使用">01 git安装和使用</h2>
+
+<p>参考git官方文档 <a href="https://git-scm.com/">https://git-scm.com/</a></p>
+
+<p>Git是一个免费的开源、分布式版本控制系统，旨在快速，高效地处理从小型到大型项目的所有事务。</p>
+
+<p>安装到 <a href="https://git-scm.com/downloads">git download</a>下载对应的操作系统版本的git安装文件，按照默认提示进行安装，安装完毕配置git的系统环境变量。</p>
+
+<p>git快速使用教程
+配置Git</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    git config --global user.name &#34;yourname&#34;
+    git config --global user.email &#34;youremail@email.com&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>命令行创建一个新的存储库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    echo &#34;temp&#34; &gt;&gt; README.md 
+    git init .
+    git add README.md 
+    git commit -m &#34;first commit&#34;
+    git remote add origin git@github.com:yourname/temp.git
+    git push -u origin master </pre></td></tr></table>
+</div>
+</div>
+<h2 id="02-hugo安装和使用">02 hugo安装和使用</h2>
+
+<p>参考hugo中文文档 <a href="http://www.gohugo.org/">http://www.gohugo.org/</a></p>
+
+<p>Hugo是由Go语言实现的静态网站生成器，其特点是简单、易用、高效、易扩展、快速部署，被称为世界上最快的网站构建框架。</p>
+
+<p>安装到 <a href="https://github.com/gohugoio/hugo/releases">Hugo Releases</a> 下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe）。</p>
+
+<p>hugo快速使用教程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    # 生成站点
+    hugo new site blog
+    cd blog
+    # 创建文章并编辑
+    hugo new about.md
+    # 运行调试Hugo
+    hugo server --theme=hyde --buildDrafts
+    # 部署
+    hugo --theme=hyde --baseUrl=&#34;http://coderzh.github.io/&#34;</pre></td></tr></table>
+</div>
+</div>
+<p>备注（以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成；主题和连接可以直接在config.toml进行配置。）
+执行完毕，静态页面都会生成到public目录，将pubilc目录里所有文件上传至github.</p>
+
+<h2 id="03-even下载和使用">03 even下载和使用</h2>
+
+<p>参考hugo-theme-even中文说明 <a href="https://github.com/olOwOlo/hugo-theme-even/blob/master/README-zh.md">https://github.com/olOwOlo/hugo-theme-even/blob/master/README-zh.md</a></p>
+
+<p>Hugo的超简洁主题，该主题移植自HEXO主题，even</p>
+
+<p>even快速使用教程
+安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    cd blog
+    git clone https://github.com/olOwOlo/hugo-theme-even themes/even</pre></td></tr></table>
+</div>
+</div>
+<p>配置
+删除even下.git文件夹，复制themes\even\exampleSitex下的文件至blog目录下。根据需求进一步配置config.toml文件。</p>
+
+<h2 id="04-github注册和使用">04 github注册和使用</h2>
+
+<p>登录<a href="https://github.com/">github官网</a>，首次登录输入用户名、邮箱和密码注册，注册成功后，新建仓库，根据提示进行操作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    # ...或在命令行上创建一个新的存储库
+    echo &#34;temp&#34; &gt;&gt; README.md 
+    git init .
+    git add README.md 
+    git commit -m &#34;first commit&#34;
+    git remote add origin git@github.com:yourname/temp.git
+    git push -u origin master 
+    # ...或从命令行推送现有存储库
+    git remote add origin git@github.com:yourname/temp.git
+    git push -u origin master
+    # ...或从另一个存储库导入代码</pre></td></tr></table>
+</div>
+</div>
+<p>配置github秘钥ssh</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    ssh-keygen -t rsa -C &#34;youremail@email.com&#34;
+    ssh -T git@github.com</pre></td></tr></table>
+</div>
+</div>
+<p>设置github pages
+进入建立的存储库，进入设置界面，找到github pages,选择资源和主题，保存即可。
+您的网站已准备好发布在 <a href="https://gsir-ying.github.io/test/。">https://gsir-ying.github.io/test/。</a>
+初始化网页见下图
+<img src="../images/2018110401.png" alt="" />
+上传hugo部署成功的网站</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    cd public 
+    git init
+    git add .
+    git status
+    git commit -m &#34;first commit&#34;
+    git remote add origin git@github.com:yourname/temp.git
+    git push -f origin master </pre></td></tr></table>
+</div>
+</div>
+<p>上传成功即可打开自己定制的博客网站。</p>
+
+<h2 id="其他">其他</h2>
+
+<blockquote>
+<p>本文提供了制作个人博客的总体流程，包含其中的大部分核心步骤，供大家学习交流。博客的进一步配置和升级会后续发布。</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">GSir</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-11-04</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/git/">git</a>
+          <a href="/tags/hugo/">hugo</a>
+          <a href="/tags/github/">github</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E8%8D%89%E7%A8%BF%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E8%84%9A%E6%9C%AC/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">博客草稿模板生成脚本</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2018-11-03-hello-world/">
+            <span class="next-text nav-default">hello-world</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'Gsir';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gsir_ying@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gsir-ying" class="iconfont icon-github" title="github"></a>
+      <a href="http://blog.sina.com.cn/u/5651674758" class="iconfont icon-weibo" title="weibo"></a>
+  <a href="https://gsir.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Gsir</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
