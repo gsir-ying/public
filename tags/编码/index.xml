@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编码 on Gsir</title>
-    <link>https://gsir.top/tags/%E7%BC%96%E7%A0%81/</link>
+    <link>gsir.top/tags/%E7%BC%96%E7%A0%81/</link>
     <description>Recent content in 编码 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 12 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://gsir.top/tags/%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="gsir.top/tags/%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>cmd脚本运行中文显示乱码的解决方法</title>
-      <link>https://gsir.top/post/2018-11-12-cmd%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <link>gsir.top/post/2018-11-12-cmd%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://gsir.top/post/2018-11-12-cmd%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <guid>gsir.top/post/2018-11-12-cmd%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
       <description>为cmd脚本的中文字符串输出乱码提供几种解决方法。推荐使用第一种方法，一次永久性解决方案。 注册表修改 win+R输入regedit进入注册表，</description>
     </item>
     

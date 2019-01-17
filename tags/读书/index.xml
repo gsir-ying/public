@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>读书 on Gsir</title>
-    <link>https://gsir.top/tags/%E8%AF%BB%E4%B9%A6/</link>
+    <link>gsir.top/tags/%E8%AF%BB%E4%B9%A6/</link>
     <description>Recent content in 读书 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://gsir.top/tags/%E8%AF%BB%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="gsir.top/tags/%E8%AF%BB%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>读书笔记</title>
-      <link>https://gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <link>gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description>读书时的一点点感觉，用文字来记录 001《天才在左疯子在右》 通书以对话的方式叙述作者与一个个“精神病人”的交流故事。每翻起书本，自己就仿佛变成</description>
     </item>
     

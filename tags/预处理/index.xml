@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>预处理 on Gsir</title>
-    <link>https://gsir.top/tags/%E9%A2%84%E5%A4%84%E7%90%86/</link>
+    <link>gsir.top/tags/%E9%A2%84%E5%A4%84%E7%90%86/</link>
     <description>Recent content in 预处理 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://gsir.top/tags/%E9%A2%84%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="gsir.top/tags/%E9%A2%84%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GNSS数据预处理工具</title>
-      <link>https://gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+      <link>gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+      <guid>gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
       <description>收集、分享、介绍常用的GNSS数据预处理工具。 1 TEQC - GNSS数据工具包 1.1 网址 https://www.unavco.org/software/data-processing/teqc/teqc.html winteqc网址 http://teqc.silkwerks.com/ 1.2 简介 Teqc是一种简单但功能强大且统一的</description>
     </item>
     

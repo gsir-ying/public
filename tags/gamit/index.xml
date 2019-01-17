@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GAMIT on Gsir</title>
-    <link>https://gsir.top/tags/gamit/</link>
+    <link>gsir.top/tags/gamit/</link>
     <description>Recent content in GAMIT on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 17 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://gsir.top/tags/gamit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="gsir.top/tags/gamit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GAMIT基线文件NRMS统计</title>
-      <link>https://gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</link>
+      <link>gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</link>
       <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</guid>
+      <guid>gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</guid>
       <description>GAMIT解算的o文件包含浮点解和固定解的NRMS，利用python脚本提取所有o文件的NRMS，输出到文件nrms.txt，以便后续分析。</description>
     </item>
     

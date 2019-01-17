@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on Gsir</title>
-    <link>https://gsir.top/tags/python/</link>
+    <link>gsir.top/tags/python/</link>
     <description>Recent content in python on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 12 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://gsir.top/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="gsir.top/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Eric安装配置</title>
-      <link>https://gsir.top/post/2018-11-12-eric%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <link>gsir.top/post/2018-11-12-eric%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://gsir.top/post/2018-11-12-eric%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <guid>gsir.top/post/2018-11-12-eric%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
       <description>利用python进行高效GUI编程的环境配置介绍。工具组合(python3+pyqt5+eric6)。接python环境搭建 eric和汉化包</description>
     </item>
     
     <item>
       <title>python环境搭建</title>
-      <link>https://gsir.top/post/2018-11-12-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <link>gsir.top/post/2018-11-12-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://gsir.top/post/2018-11-12-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <guid>gsir.top/post/2018-11-12-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       <description>python初学者如何快速搭建一个学习平台。 python下载 python安装包下载：https://www.python.org Python</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python3 on Gsir</title>
-    <link>https://gsir.top/tags/python3/</link>
+    <link>gsir.top/tags/python3/</link>
     <description>Recent content in python3 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://gsir.top/tags/python3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="gsir.top/tags/python3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>python3基础巩固学习</title>
-      <link>https://gsir.top/post/2018-11-04-python3%E5%9F%BA%E7%A1%80%E5%B7%A9%E5%9B%BA%E5%AD%A6%E4%B9%A0/</link>
+      <link>gsir.top/post/2018-11-04-python3%E5%9F%BA%E7%A1%80%E5%B7%A9%E5%9B%BA%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://gsir.top/post/2018-11-04-python3%E5%9F%BA%E7%A1%80%E5%B7%A9%E5%9B%BA%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>gsir.top/post/2018-11-04-python3%E5%9F%BA%E7%A1%80%E5%B7%A9%E5%9B%BA%E5%AD%A6%E4%B9%A0/</guid>
       <description>Python3基础语法知识点+个人总结 基础语法 01 参考微信公众号：https://mp.weixin.qq.com/s/3TKMBzJZoYf</description>
     </item>
     
