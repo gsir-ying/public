@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: gsir.top/sitemap.xml
+Sitemap: http://gsir.top/sitemap.xml

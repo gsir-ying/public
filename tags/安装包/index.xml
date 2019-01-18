@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>安装包 on Gsir</title>
-    <link>gsir.top/tags/%E5%AE%89%E8%A3%85%E5%8C%85/</link>
+    <link>http://gsir.top/tags/%E5%AE%89%E8%A3%85%E5%8C%85/</link>
     <description>Recent content in 安装包 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 11 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="gsir.top/tags/%E5%AE%89%E8%A3%85%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gsir.top/tags/%E5%AE%89%E8%A3%85%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>程序安装包制作工具</title>
-      <link>gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</link>
+      <link>http://gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</guid>
+      <guid>http://gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</guid>
       <description>程序安装包制作工具推荐 inno setup 官网 http://www.jrsoftware.org/isinfo.php 简介 Inno Setup是Jordan Russell和Martijn Laan为Windows程序提供的免费安装程序。</description>
     </item>
     

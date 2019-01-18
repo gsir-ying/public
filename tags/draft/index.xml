@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>draft on Gsir</title>
-    <link>gsir.top/tags/draft/</link>
+    <link>http://gsir.top/tags/draft/</link>
     <description>Recent content in draft on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="gsir.top/tags/draft/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gsir.top/tags/draft/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>博客草稿模板生成脚本</title>
-      <link>gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E8%8D%89%E7%A8%BF%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E8%84%9A%E6%9C%AC/</link>
+      <link>http://gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E8%8D%89%E7%A8%BF%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E8%8D%89%E7%A8%BF%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E8%84%9A%E6%9C%AC/</guid>
+      <guid>http://gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E8%8D%89%E7%A8%BF%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E8%84%9A%E6%9C%AC/</guid>
       <description>使用hugo创建博文草稿，需配置博文的一些信息。本文使用powershell脚本自动生成草稿模板。 自定义模板 本人暂时使用的模板如下所示。 1 2</description>
     </item>
     

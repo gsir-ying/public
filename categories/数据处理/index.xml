@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数据处理 on Gsir</title>
-    <link>gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</link>
+    <link>http://gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</link>
     <description>Recent content in 数据处理 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GNSS数据后处理工具</title>
-      <link>gsir.top/post/2018-12-03-gnss%E6%95%B0%E6%8D%AE%E5%90%8E%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+      <link>http://gsir.top/post/2018-12-03-gnss%E6%95%B0%E6%8D%AE%E5%90%8E%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/post/2018-12-03-gnss%E6%95%B0%E6%8D%AE%E5%90%8E%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+      <guid>http://gsir.top/post/2018-12-03-gnss%E6%95%B0%E6%8D%AE%E5%90%8E%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
       <description>介绍常用的gnss数据后处理工具。 GAMIT/GLOBK 网址 官网 http://www-gpsg.mit.edu/~simon/gtgk/down.htm 简介 GAMIT是有MIT和SIO共同研制的用于GNSS定位定轨的数据分析软件包。软件代码基于F</description>
     </item>
     
     <item>
       <title>GNSS数据预处理工具</title>
-      <link>gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+      <link>http://gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+      <guid>http://gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
       <description>收集、分享、介绍常用的GNSS数据预处理工具。 1 TEQC - GNSS数据工具包 1.1 网址 https://www.unavco.org/software/data-processing/teqc/teqc.html winteqc网址 http://teqc.silkwerks.com/ 1.2 简介 Teqc是一种简单但功能强大且统一的</description>
     </item>
     
     <item>
       <title>GAMIT基线重复性分析脚本</title>
-      <link>gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</link>
+      <link>http://gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</guid>
+      <guid>http://gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</guid>
       <description>GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的</description>
     </item>
     

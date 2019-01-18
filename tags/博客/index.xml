@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>博客 on Gsir</title>
-    <link>gsir.top/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <link>http://gsir.top/tags/%E5%8D%9A%E5%AE%A2/</link>
     <description>Recent content in 博客 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 11 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="gsir.top/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gsir.top/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hugo&#43;gitpages绑定个人域名</title>
-      <link>gsir.top/post/2018-11-11-hugo&#43;gitpages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</link>
+      <link>http://gsir.top/post/2018-11-11-hugo&#43;gitpages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</link>
       <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/post/2018-11-11-hugo&#43;gitpages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</guid>
+      <guid>http://gsir.top/post/2018-11-11-hugo&#43;gitpages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</guid>
       <description>个人域名的申请、注册、备案和解析流程；gitpages绑定个人域名需注意事项。GSir的个人域名为：https://www.gsir.top</description>
     </item>
     
     <item>
       <title>hello-world</title>
-      <link>gsir.top/post/2018-11-03-hello-world/</link>
+      <link>http://gsir.top/post/2018-11-03-hello-world/</link>
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/post/2018-11-03-hello-world/</guid>
+      <guid>http://gsir.top/post/2018-11-03-hello-world/</guid>
       <description>世界，你好！欢迎来到GSir的个人博客。 本博客成立于2018年，成立目的是学习、记录和分享自己的所见所得，一起学习进步；主要关注于GNSS、</description>
     </item>
     

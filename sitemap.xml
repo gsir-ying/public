@@ -1,484 +1,484 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="gsir.top/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="http://gsir.top/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>gsir.top/links/</loc>
+    <loc>http://gsir.top/links/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/downloads/</loc>
+    <loc>http://gsir.top/downloads/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/about/</loc>
+    <loc>http://gsir.top/about/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-12-11-windows%E7%A8%8B%E5%BA%8F%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://gsir.top/post/2018-12-11-windows%E7%A8%8B%E5%BA%8F%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-12-07-winform%E7%95%8C%E9%9D%A2%E6%A8%A1%E7%B3%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
+    <loc>http://gsir.top/post/2018-12-07-winform%E7%95%8C%E9%9D%A2%E6%A8%A1%E7%B3%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-12-04-gnss%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/</loc>
+    <loc>http://gsir.top/post/2018-12-04-gnss%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/</loc>
     <lastmod>2018-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-12-03-gnss%E6%95%B0%E6%8D%AE%E5%90%8E%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://gsir.top/post/2018-12-03-gnss%E6%95%B0%E6%8D%AE%E5%90%8E%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-12-03-linux%E5%AE%89%E8%A3%85powershell/</loc>
+    <loc>http://gsir.top/post/2018-12-03-linux%E5%AE%89%E8%A3%85powershell/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-12-03-powershell%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>http://gsir.top/post/2018-12-03-powershell%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://gsir.top/post/2018-12-02-gnss%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-12-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</loc>
+    <loc>http://gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</loc>
     <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-12-eric%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
+    <loc>http://gsir.top/post/2018-11-12-eric%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2018-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-12-cmd%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
+    <loc>http://gsir.top/post/2018-11-12-cmd%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2018-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-12-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://gsir.top/post/2018-11-12-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2018-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-11-hugo&#43;gitpages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</loc>
+    <loc>http://gsir.top/post/2018-11-11-hugo&#43;gitpages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</loc>
     <lastmod>2018-11-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-06-gg%E8%BE%85%E5%8A%A9%E7%A8%8B%E5%BA%8F/</loc>
+    <loc>http://gsir.top/post/2018-11-06-gg%E8%BE%85%E5%8A%A9%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2018-11-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/</loc>
+    <loc>http://gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/</loc>
     <lastmod>2018-11-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2018-11-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</loc>
+    <loc>http://gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2018-11-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-04-vscode%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://gsir.top/post/2018-11-04-vscode%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-04-python3%E5%9F%BA%E7%A1%80%E5%B7%A9%E5%9B%BA%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://gsir.top/post/2018-11-04-python3%E5%9F%BA%E7%A1%80%E5%B7%A9%E5%9B%BA%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</loc>
+    <loc>http://gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E7%BB%B4%E6%8A%A4%E8%84%9A%E6%9C%AC/</loc>
+    <loc>http://gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E7%BB%B4%E6%8A%A4%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E8%8D%89%E7%A8%BF%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E8%84%9A%E6%9C%AC/</loc>
+    <loc>http://gsir.top/post/2018-11-04-%E5%8D%9A%E5%AE%A2%E8%8D%89%E7%A8%BF%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-03-hugo&#43;github%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>http://gsir.top/post/2018-11-03-hugo&#43;github%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/2018-11-03-hello-world/</loc>
+    <loc>http://gsir.top/post/2018-11-03-hello-world/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/c/</loc>
+    <loc>http://gsir.top/tags/c/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/categories/</loc>
+    <loc>http://gsir.top/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/eric/</loc>
+    <loc>http://gsir.top/tags/eric/</loc>
     <lastmod>2018-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/gamit/</loc>
+    <loc>http://gsir.top/tags/gamit/</loc>
     <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/gamit-globk/</loc>
+    <loc>http://gsir.top/tags/gamit-globk/</loc>
     <lastmod>2018-11-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/categories/gamit-globk/</loc>
+    <loc>http://gsir.top/categories/gamit-globk/</loc>
     <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/gnss/</loc>
+    <loc>http://gsir.top/tags/gnss/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/categories/gnss/</loc>
+    <loc>http://gsir.top/categories/gnss/</loc>
     <lastmod>2018-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/</loc>
+    <loc>http://gsir.top/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/matlab/</loc>
+    <loc>http://gsir.top/tags/matlab/</loc>
     <lastmod>2018-11-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/nrms/</loc>
+    <loc>http://gsir.top/tags/nrms/</loc>
     <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/post/</loc>
+    <loc>http://gsir.top/post/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/</loc>
+    <loc>http://gsir.top/tags/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/vscode/</loc>
+    <loc>http://gsir.top/tags/vscode/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/cmd/</loc>
+    <loc>http://gsir.top/tags/cmd/</loc>
     <lastmod>2018-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/dataset/</loc>
+    <loc>http://gsir.top/tags/dataset/</loc>
     <lastmod>2018-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/draft/</loc>
+    <loc>http://gsir.top/tags/draft/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/git/</loc>
+    <loc>http://gsir.top/tags/git/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/github/</loc>
+    <loc>http://gsir.top/tags/github/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/hugo/</loc>
+    <loc>http://gsir.top/tags/hugo/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/powershell/</loc>
+    <loc>http://gsir.top/tags/powershell/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/python/</loc>
+    <loc>http://gsir.top/tags/python/</loc>
     <lastmod>2018-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/categories/python/</loc>
+    <loc>http://gsir.top/categories/python/</loc>
     <lastmod>2018-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/python3/</loc>
+    <loc>http://gsir.top/tags/python3/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/categories/%E4%B9%A6%E7%B1%8D%E4%BA%BA%E7%94%9F/</loc>
+    <loc>http://gsir.top/categories/%E4%B9%A6%E7%B1%8D%E4%BA%BA%E7%94%9F/</loc>
     <lastmod>2018-11-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>http://gsir.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2018-11-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/categories/%E5%8D%9A%E5%AE%A2%E4%BA%BA%E7%94%9F/</loc>
+    <loc>http://gsir.top/categories/%E5%8D%9A%E5%AE%A2%E4%BA%BA%E7%94%9F/</loc>
     <lastmod>2018-11-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E5%8D%9A%E5%AE%A2%E7%BB%B4%E6%8A%A4/</loc>
+    <loc>http://gsir.top/tags/%E5%8D%9A%E5%AE%A2%E7%BB%B4%E6%8A%A4/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E5%90%8E%E5%A4%84%E7%90%86/</loc>
+    <loc>http://gsir.top/tags/%E5%90%8E%E5%A4%84%E7%90%86/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7/</loc>
+    <loc>http://gsir.top/tags/%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7/</loc>
     <lastmod>2018-11-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E5%AE%89%E8%A3%85%E5%8C%85/</loc>
+    <loc>http://gsir.top/tags/%E5%AE%89%E8%A3%85%E5%8C%85/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://gsir.top/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E6%8F%92%E4%BB%B6/</loc>
+    <loc>http://gsir.top/tags/%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</loc>
+    <loc>http://gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/</loc>
+    <loc>http://gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E7%BC%96%E7%A0%81/</loc>
+    <loc>http://gsir.top/tags/%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2018-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://gsir.top/tags/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</loc>
+    <loc>http://gsir.top/tags/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E8%AF%BB%E4%B9%A6/</loc>
+    <loc>http://gsir.top/tags/%E8%AF%BB%E4%B9%A6/</loc>
     <lastmod>2018-11-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/</loc>
+    <loc>http://gsir.top/tags/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/</loc>
     <lastmod>2018-11-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E8%BE%85%E5%8A%A9%E7%A8%8B%E5%BA%8F/</loc>
+    <loc>http://gsir.top/tags/%E8%BE%85%E5%8A%A9%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2018-11-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>gsir.top/tags/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
+    <loc>http://gsir.top/tags/%E9%A2%84%E5%A4%84%E7%90%86/</loc>
     <lastmod>2018-12-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>

@@ -2,74 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Gsir</title>
-    <link>gsir.top/categories/</link>
+    <link>http://gsir.top/categories/</link>
     <description>Recent content in Categories on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	<atom:link href="gsir.top/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gsir.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GAMIT-GLOBK</title>
-      <link>gsir.top/categories/gamit-globk/</link>
+      <link>http://gsir.top/categories/gamit-globk/</link>
       <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/categories/gamit-globk/</guid>
+      <guid>http://gsir.top/categories/gamit-globk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GNSS</title>
-      <link>gsir.top/categories/gnss/</link>
+      <link>http://gsir.top/categories/gnss/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/categories/gnss/</guid>
+      <guid>http://gsir.top/categories/gnss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>gsir.top/categories/python/</link>
+      <link>http://gsir.top/categories/python/</link>
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/categories/python/</guid>
+      <guid>http://gsir.top/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>书籍人生</title>
-      <link>gsir.top/categories/%E4%B9%A6%E7%B1%8D%E4%BA%BA%E7%94%9F/</link>
+      <link>http://gsir.top/categories/%E4%B9%A6%E7%B1%8D%E4%BA%BA%E7%94%9F/</link>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/categories/%E4%B9%A6%E7%B1%8D%E4%BA%BA%E7%94%9F/</guid>
+      <guid>http://gsir.top/categories/%E4%B9%A6%E7%B1%8D%E4%BA%BA%E7%94%9F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>博客人生</title>
-      <link>gsir.top/categories/%E5%8D%9A%E5%AE%A2%E4%BA%BA%E7%94%9F/</link>
+      <link>http://gsir.top/categories/%E5%8D%9A%E5%AE%A2%E4%BA%BA%E7%94%9F/</link>
       <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/categories/%E5%8D%9A%E5%AE%A2%E4%BA%BA%E7%94%9F/</guid>
+      <guid>http://gsir.top/categories/%E5%8D%9A%E5%AE%A2%E4%BA%BA%E7%94%9F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数据处理</title>
-      <link>gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</link>
+      <link>http://gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</guid>
+      <guid>http://gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>程序人生</title>
-      <link>gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/</link>
+      <link>http://gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/</link>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/</guid>
+      <guid>http://gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/</guid>
       <description></description>
     </item>
     

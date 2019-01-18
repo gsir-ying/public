@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dataset on Gsir</title>
-    <link>gsir.top/tags/dataset/</link>
+    <link>http://gsir.top/tags/dataset/</link>
     <description>Recent content in dataset on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 04 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="gsir.top/tags/dataset/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gsir.top/tags/dataset/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GNSS常用数据下载</title>
-      <link>gsir.top/post/2018-12-04-gnss%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/</link>
+      <link>http://gsir.top/post/2018-12-04-gnss%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>gsir.top/post/2018-12-04-gnss%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>http://gsir.top/post/2018-12-04-gnss%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD/</guid>
       <description>收集整理GNSS常用数据下载链接。 常用机构或中心 cddis sopac 文件标准格式 数据格式描述 rinex-sp3 file sinex file sinex bias files ion-tro RINEX Observation Files（RINEX 观测文件） version 2（版本 2</description>
     </item>
     
