@@ -6,10 +6,23 @@
     <description>Recent content in 程序人生 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python入门基础训练</title>
+      <link>http://gsir.top/post/2019-01-24-python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/</link>
+      <pubDate>Wed, 23 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-01-24-python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;上海天文台Python培训&amp;mdash;Python基础(Wang Weihua)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Windows程序文件打包工具</title>
@@ -17,7 +30,11 @@
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-12-11-windows%E7%A8%8B%E5%BA%8F%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/</guid>
-      <description>文件打包工具介绍 Enigma 文件打包系统（适合所有程序） Enigma Virtual Box和BoxedApp Packer，单文件封包工具，顾名思义就是将可执行文件及其相关依赖</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;文件打包工具介绍&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +43,11 @@
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-12-11-%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7/</guid>
-      <description>程序安装包制作工具推荐 inno setup 官网 http://www.jrsoftware.org/isinfo.php 简介 Inno Setup是Jordan Russell和Martijn Laan为Windows程序提供的免费安装程序。</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;程序安装包制作工具推荐&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,7 +56,11 @@
       <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-12-07-winform%E7%95%8C%E9%9D%A2%E6%A8%A1%E7%B3%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
-      <description>解决winform运行时窗体界面字体模糊、控件缩放、设计界面与运行界面不一致的问题。 修改程序配置文件 1 选择当前项目，单击鼠标右键，选择“添加</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;解决winform运行时窗体界面字体模糊、控件缩放、设计界面与运行界面不一致的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,7 +69,11 @@
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-12-03-linux%E5%AE%89%E8%A3%85powershell/</guid>
-      <description>介绍如何在ubuntu系统安装使用powershell core 安装 网址 github地址 https://github.com/PowerShell/PowerShell ubuntu18.04安装 1 2 3 4 5 6 7 8 9 10 11 12 13 14 # Download</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;介绍如何在ubuntu系统安装使用powershell core&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,7 +82,11 @@
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-12-03-powershell%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D/</guid>
-      <description>介绍powershell的特性、IDE、常用语法。 简介 Windows Powershell 是运行在windows机器上实现系统和应用程序管理自动化的命令行脚本环境。可以把它</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;介绍powershell的特性、IDE、常用语法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,7 +95,11 @@
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-11-12-eric%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
-      <description>利用python进行高效GUI编程的环境配置介绍。工具组合(python3+pyqt5+eric6)。接python环境搭建 eric和汉化包</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;利用python进行高效GUI编程的环境配置介绍。工具组合(python3+pyqt5+eric6)。接&lt;a href=&#34;https://www.gsir.top/post/2018-11-12-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&#34;&gt;python环境搭建&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -71,7 +108,11 @@
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-11-12-cmd%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
-      <description>为cmd脚本的中文字符串输出乱码提供几种解决方法。推荐使用第一种方法，一次永久性解决方案。 注册表修改 win+R输入regedit进入注册表，</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;为cmd脚本的中文字符串输出乱码提供几种解决方法。推荐使用第一种方法，一次永久性解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -80,7 +121,11 @@
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-11-12-python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-      <description>python初学者如何快速搭建一个学习平台。 python下载 python安装包下载：https://www.python.org Python</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;python初学者如何快速搭建一个学习平台。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,7 +134,11 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-11-04-vscode%E4%BD%BF%E7%94%A8/</guid>
-      <description>持续更新VScode的介绍和使用，包含常用编程插件、扩展和工具，以及总结的使用技巧和快捷方式。 介绍 Visual Studio Code是一个轻量级但功能强大的源代码</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;持续更新VScode的介绍和使用，包含常用编程插件、扩展和工具，以及总结的使用技巧和快捷方式。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,7 +147,11 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-11-04-python3%E5%9F%BA%E7%A1%80%E5%B7%A9%E5%9B%BA%E5%AD%A6%E4%B9%A0/</guid>
-      <description>Python3基础语法知识点+个人总结 基础语法 01 参考微信公众号：https://mp.weixin.qq.com/s/3TKMBzJZoYf</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Python3基础语法知识点+个人总结&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

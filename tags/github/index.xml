@@ -17,7 +17,11 @@
       <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-11-03-hugo&#43;github%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>详细讲述如何使用hugo+github建立、生成、发布、维护个人静态博客。 01 git安装和使用 参考git官方文档 https://git-scm.com/ Git是一个免费的开源、分布</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;详细讲述如何使用hugo+github建立、生成、发布、维护个人静态博客。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

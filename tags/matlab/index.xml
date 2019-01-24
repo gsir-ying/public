@@ -17,7 +17,12 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/</guid>
-      <description>GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;GAMIT/GLOBK高精度GNSS解算软件得到的基线结果质量的评价有一个重要的指标——基线重复性。本文利用matlab编写求取基线重复性的脚本。
+后期使用Matlab脚本发现bug，如果每天的基线数量不一致会报错，且运行速度太慢。改用python重写，修改bug。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

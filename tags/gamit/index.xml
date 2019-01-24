@@ -17,7 +17,11 @@
       <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/post/2018-11-17-gamit%E5%9F%BA%E7%BA%BFnrms%E7%BB%9F%E8%AE%A1/</guid>
-      <description>GAMIT解算的o文件包含浮点解和固定解的NRMS，利用python脚本提取所有o文件的NRMS，输出到文件nrms.txt，以便后续分析。</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;GAMIT解算的o文件包含浮点解和固定解的NRMS，利用python脚本提取所有o文件的NRMS，输出到文件nrms.txt，以便后续分析。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

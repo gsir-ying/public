@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>人工智能 on Gsir</title>
+    <link>http://gsir.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</link>
+    <description>Recent content in 人工智能 on Gsir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gsir.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>人工智能&#43;python学习</title>
+      <link>http://gsir.top/post/2019-01-24-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD&#43;python%E8%AE%AD%E7%BB%83/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-01-24-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD&#43;python%E8%AE%AD%E7%BB%83/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;简单介绍如何使用现有工具或库进行人工智能学习训练，包括语音识别，语音合成，图灵机器人，微信控制，email控制等。试试吧~&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
