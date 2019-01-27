@@ -233,13 +233,6 @@
   </url>
   
   <url>
-    <loc>http://gsir.top/tags/gamit-globk/</loc>
-    <lastmod>2018-11-06T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://gsir.top/categories/gamit-globk/</loc>
     <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,8 +240,8 @@
   </url>
   
   <url>
-    <loc>http://gsir.top/tags/gnss/</loc>
-    <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/tags/gamit-globk/</loc>
+    <lastmod>2018-11-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -256,6 +249,13 @@
   <url>
     <loc>http://gsir.top/categories/gnss/</loc>
     <lastmod>2018-12-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gsir.top/tags/gnss/</loc>
+    <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -352,15 +352,15 @@
   </url>
   
   <url>
-    <loc>http://gsir.top/tags/python/</loc>
-    <lastmod>2019-01-23T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/categories/python/</loc>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gsir.top/categories/python/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/tags/python/</loc>
+    <lastmod>2019-01-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -380,14 +380,14 @@
   </url>
   
   <url>
-    <loc>http://gsir.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <loc>http://gsir.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gsir.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <loc>http://gsir.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
