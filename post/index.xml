@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python&#43;朋友圈分析</title>
+      <link>http://gsir.top/post/2019-01-29-python&#43;%E6%9C%8B%E5%8F%8B%E5%9C%88%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-01-29-python&#43;%E6%9C%8B%E5%8F%8B%E5%9C%88%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;利用python，基于itchats和pandans第三方库分析个人微信朋友圈的信息和特征。
+使用itchat获得朋友圈数据，使用pandas进行分析。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>人工智能&#43;python学习</title>
