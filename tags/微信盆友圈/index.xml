@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>微信盆友圈 on Gsir</title>
+    <link>http://gsir.top/tags/%E5%BE%AE%E4%BF%A1%E7%9B%86%E5%8F%8B%E5%9C%88/</link>
+    <description>Recent content in 微信盆友圈 on Gsir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gsir.top/tags/%E5%BE%AE%E4%BF%A1%E7%9B%86%E5%8F%8B%E5%9C%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python&#43;朋友圈分析</title>
+      <link>http://gsir.top/post/2019-01-29-python&#43;%E6%9C%8B%E5%8F%8B%E5%9C%88%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-01-29-python&#43;%E6%9C%8B%E5%8F%8B%E5%9C%88%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;利用python，基于itchats和pandans第三方库分析个人微信朋友圈的信息和特征。
+使用itchat获得朋友圈数据，使用pandas进行分析。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

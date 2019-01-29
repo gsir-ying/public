@@ -6,19 +6,10 @@
     <description>Recent content in Tags on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title></title>
-      <link>http://gsir.top/tags/</link>
-      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gsir.top/tags/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>C#</title>
@@ -158,7 +149,7 @@
     <item>
       <title>python</title>
       <link>http://gsir.top/tags/python/</link>
-      <pubDate>Wed, 23 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/tags/python/</guid>
       <description></description>
@@ -237,6 +228,15 @@
     </item>
     
     <item>
+      <title>微信盆友圈</title>
+      <link>http://gsir.top/tags/%E5%BE%AE%E4%BF%A1%E7%9B%86%E5%8F%8B%E5%9C%88/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/tags/%E5%BE%AE%E4%BF%A1%E7%9B%86%E5%8F%8B%E5%9C%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>打包工具</title>
       <link>http://gsir.top/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
@@ -278,6 +278,15 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/tags/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>词云</title>
+      <link>http://gsir.top/tags/%E8%AF%8D%E4%BA%91/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/tags/%E8%AF%8D%E4%BA%91/</guid>
       <description></description>
     </item>
     
