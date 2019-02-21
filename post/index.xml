@@ -6,10 +6,36 @@
     <description>Recent content in Posts on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ubuntu安装切换gcc和g&#43;&#43;</title>
+      <link>http://gsir.top/post/2019-02-21-ubuntu%E5%AE%89%E8%A3%85%E5%88%87%E6%8D%A2gcc%E5%92%8Cg&#43;&#43;/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-02-21-ubuntu%E5%AE%89%E8%A3%85%E5%88%87%E6%8D%A2gcc%E5%92%8Cg&#43;&#43;/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;不同版本gcc和g++安装和切换，高版本ubuntu系统安装gamit需要。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ubuntu简单安装配置</title>
+      <link>http://gsir.top/post/2019-02-21-ubuntu%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-02-21-ubuntu%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;ubuntu系统U盘制作，安装后的简单配置。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>python&#43;朋友圈分析</title>

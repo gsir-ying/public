@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ubuntu安装切换gcc和g&#43;&#43; - Gsir</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="GSir" /><meta name="description" content=" 不同版本gcc和g&#43;&#43;安装和切换，高版本ubuntu系统安装gamit需要。
+ 
+" /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://gsir.top/post/2019-02-21-ubuntu%E5%AE%89%E8%A3%85%E5%88%87%E6%8D%A2gcc%E5%92%8Cg&#43;&#43;/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ubuntu安装切换gcc和g&#43;&#43;" />
+<meta property="og:description" content="
+不同版本gcc和g&#43;&#43;安装和切换，高版本ubuntu系统安装gamit需要。
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gsir.top/post/2019-02-21-ubuntu%E5%AE%89%E8%A3%85%E5%88%87%E6%8D%A2gcc%E5%92%8Cg&#43;&#43;/" /><meta property="article:published_time" content="2019-02-21T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-02-21T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="ubuntu安装切换gcc和g&#43;&#43;">
+<meta itemprop="description" content="
+不同版本gcc和g&#43;&#43;安装和切换，高版本ubuntu系统安装gamit需要。
+
+
+">
+
+
+<meta itemprop="datePublished" content="2019-02-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-02-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="217">
+
+
+
+<meta itemprop="keywords" content="ubuntu," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ubuntu安装切换gcc和g&#43;&#43;"/>
+<meta name="twitter:description" content="
+不同版本gcc和g&#43;&#43;安装和切换，高版本ubuntu系统安装gamit需要。
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">碧海青天夜夜心</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/downloads/">
+        <li class="mobile-menu-item">下载</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">碧海青天夜夜心</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/downloads/">下载</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ubuntu安装切换gcc和g&#43;&#43;</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-02-21 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%B3%BB%E7%BB%9F%E4%BA%BA%E7%94%9F/"> 系统人生 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#gfortran-gcc-g-切换-安装gamit需要切换低版本">gfortran gcc g++切换(安装gamit需要切换低版本)</a></li>
+<li><a href="#然后选择gcc和g-gfortran">然后选择gcc和g++ gfortran</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>不同版本gcc和g++安装和切换，高版本ubuntu系统安装gamit需要。</p>
+</blockquote>
+
+<p></p>
+
+<h1 id="gfortran-gcc-g-切换-安装gamit需要切换低版本">gfortran gcc g++切换(安装gamit需要切换低版本)</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install gcc-5 gcc-5-multilib
+sudo apt-get install g++-5 g++-5-multilib
+sudo apt-get install gcc-6 gcc-6-multilib
+sudo apt-get install g++-6 g++-6-multilib
+sudo apt-get install gcc-7 gcc-7-multilib
+sudo apt-get install g++-7 g++-7-multilib
+
+sudo apt-get install gfortran-5 gfortran-5-multilib
+sudo apt-get install gfortran-6 gfortran-6-multilib
+sudo apt-get install gfortran-7 gfortran-7-multilib
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 <span class="m">50</span>
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 <span class="m">60</span>
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 <span class="m">70</span>
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 <span class="m">50</span>
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 <span class="m">60</span>
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 <span class="m">70</span>
+
+sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-5 <span class="m">50</span>
+sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-6 <span class="m">60</span>
+sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-7 <span class="m">70</span></code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="然后选择gcc和g-gfortran">然后选择gcc和g++ gfortran</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+sudo update-alternatives --config gfortran</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">GSir</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-02-21</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ubuntu/">ubuntu</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2019-02-21-ubuntu%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
+            <span class="next-text nav-default">ubuntu简单安装配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'Gsir';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gsir_ying@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gsir-ying" class="iconfont icon-github" title="github"></a>
+      <a href="http://blog.sina.com.cn/u/5651674758" class="iconfont icon-weibo" title="weibo"></a>
+  <a href="http://gsir.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Gsir</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
