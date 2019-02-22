@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ubuntu18以上高版本系统GAMIT10.7安装教程</title>
+      <link>http://gsir.top/post/2019-02-22-ubuntu18%E4%BB%A5%E4%B8%8A%E9%AB%98%E7%89%88%E6%9C%AC%E7%B3%BB%E7%BB%9Fgamit-globk%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-02-22-ubuntu18%E4%BB%A5%E4%B8%8A%E9%AB%98%E7%89%88%E6%9C%AC%E7%B3%BB%E7%BB%9Fgamit-globk%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;高版本Linux系统由于gcc和g++编译器自带版本较高，与GAMIT编译所使用的版本不太兼容，因此ubuntu18或fedora27等高版本系统无法成功安装GAMIT10.7版本。本教程为解决gamit10.7安装过程中经常出现的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ubuntu安装切换gcc和g&#43;&#43;</title>
