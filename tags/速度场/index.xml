@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>速度场 on Gsir</title>
+    <link>http://gsir.top/tags/%E9%80%9F%E5%BA%A6%E5%9C%BA/</link>
+    <description>Recent content in 速度场 on Gsir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gsir.top/tags/%E9%80%9F%E5%BA%A6%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>有关于速度场插值拟合主要思路</title>
+      <link>http://gsir.top/post/2019-04-03-%E6%9C%89%E5%85%B3%E4%BA%8E%E9%80%9F%E5%BA%A6%E5%9C%BA%E6%8F%92%E5%80%BC%E6%8B%9F%E5%90%88%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-04-03-%E6%9C%89%E5%85%B3%E4%BA%8E%E9%80%9F%E5%BA%A6%E5%9C%BA%E6%8F%92%E5%80%BC%E6%8B%9F%E5%90%88%E4%B8%BB%E8%A6%81%E6%80%9D%E8%B7%AF/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;得到中国大陆陆态网的站点速度之后，如果站点的分布有一定的密度和数量，便可以考虑利用改速度数据插值或拟合出大陆内任意一点的站点速度。
+通常由于GNSS数据求解得到的站点垂直速度精度较低，因此主要针对站点的水平速度进行讨论研究。
+gsir主要采用的方法有01欧拉适量 02格网速度场（克里金插值，反距离加权，基于三角网的反距离加权等）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
