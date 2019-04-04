@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>播客人生 on Gsir</title>
+    <link>http://gsir.top/categories/%E6%92%AD%E5%AE%A2%E4%BA%BA%E7%94%9F/</link>
+    <description>Recent content in 播客人生 on Gsir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 15 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gsir.top/categories/%E6%92%AD%E5%AE%A2%E4%BA%BA%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>博客上传至云服务器</title>
+      <link>http://gsir.top/post/2019-01-15-%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E8%87%B3%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-01-15-%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E8%87%B3%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;虽然使用hguo+gitpage可以免费搭建和维护一个自己的的博客系统，但是如果要使用自己独有的域名，需要花钱买一个域名，中国大陆内使用还需要对域名进行注册，域名解析要买服务器。
+gsir使用阿里云买了1年的域名和轻量级云服务器使用权。学生认证者续费的话一年大概不到200元，还是比较划算的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

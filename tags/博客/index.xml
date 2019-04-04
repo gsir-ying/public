@@ -25,6 +25,20 @@
     </item>
     
     <item>
+      <title>博客上传至云服务器</title>
+      <link>http://gsir.top/post/2019-01-15-%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E8%87%B3%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-01-15-%E5%8D%9A%E5%AE%A2%E4%B8%8A%E4%BC%A0%E8%87%B3%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;虽然使用hguo+gitpage可以免费搭建和维护一个自己的的博客系统，但是如果要使用自己独有的域名，需要花钱买一个域名，中国大陆内使用还需要对域名进行注册，域名解析要买服务器。
+gsir使用阿里云买了1年的域名和轻量级云服务器使用权。学生认证者续费的话一年大概不到200元，还是比较划算的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>hugo&#43;gitpages绑定个人域名</title>
       <link>http://gsir.top/post/2018-11-11-hugo&#43;gitpages%E7%BB%91%E5%AE%9A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/</link>
       <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
