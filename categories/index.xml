@@ -20,11 +20,29 @@
     </item>
     
     <item>
+      <title>GMT</title>
+      <link>http://gsir.top/categories/gmt/</link>
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/categories/gmt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>GNSS</title>
       <link>http://gsir.top/categories/gnss/</link>
       <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gsir.top/categories/gnss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ITRF</title>
+      <link>http://gsir.top/categories/itrf/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/categories/itrf/</guid>
       <description></description>
     </item>
     

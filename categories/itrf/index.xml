@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ITRF on Gsir</title>
+    <link>http://gsir.top/categories/itrf/</link>
+    <description>Recent content in ITRF on Gsir</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gsir.top/categories/itrf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ITRF转换至CGCS200</title>
+      <link>http://gsir.top/post/2019-04-07-itrf%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-04-07-itrf%E8%BD%AC%E6%8D%A2/</guid>
+      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ITRF转换至CGCS200 - Gsir</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="GSir" /><meta name="description" content="  
+" /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://gsir.top/post/2019-04-07-itrf%E8%BD%AC%E6%8D%A2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ITRF转换至CGCS200" />
+<meta property="og:description" content="
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gsir.top/post/2019-04-07-itrf%E8%BD%AC%E6%8D%A2/" /><meta property="article:published_time" content="2019-04-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-07T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="ITRF转换至CGCS200">
+<meta itemprop="description" content="
+
+
+">
+
+
+<meta itemprop="datePublished" content="2019-04-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1148">
+
+
+
+<meta itemprop="keywords" content="参数转换," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ITRF转换至CGCS200"/>
+<meta name="twitter:description" content="
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">碧海青天夜夜心</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/downloads/">
+        <li class="mobile-menu-item">下载</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">碧海青天夜夜心</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/downloads/">下载</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ITRF转换至CGCS200</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-04-07 </span>
+        <div class="post-category">
+            <a href="/categories/itrf/"> ITRF </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#cgcs2000简介">CGCS2000简介</a></li>
+<li><a href="#itrf框架简介">ITRF框架简介</a></li>
+<li><a href="#itrf2014与之前解决方案之间的转换参数">ITRF2014与之前解决方案之间的转换参数</a></li>
+<li><a href="#itrf框架相互转换">ITRF框架相互转换</a>
+<ul>
+<li><a href="#历元统一公式">历元统一公式</a></li>
+<li><a href="#框架统一公式">框架统一公式</a></li>
+</ul></li>
+<li><a href="#实例">实例</a></li>
+<li><a href="#讨论">讨论</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+</blockquote>
+
+<p></p>
+
+<h1 id="cgcs2000简介">CGCS2000简介</h1>
+
+<p>CGCS2000是（中国）2000国家大地坐标系的缩写，该坐标系是通过中国GPS连续运行基准站、空间大地控制网以及天文大地网与空间地网联合平差建立的地心大地坐标系统。2000（中国）国家大地坐标系以ITRF97 参考框架为基准, 参考框架历元为2000.0。</p>
+
+<h1 id="itrf框架简介">ITRF框架简介</h1>
+
+<p>ITRF，即International Terrestrial Reference Frame（国际地球参考框架），是由国际地球自转服务局（IERS）根据一定要求，建立分布全球的地面观测台站，采用甚长基线干涉测量（VLBI）、卫星激光测距（SLR）、激光测月（LLR）、GPS和卫星多普勒定轨定位（DORIS）等空间大地测量技术，由IERS中央局对所有观测数据进行综合分析处理，得到地面观测站的站坐标和速度场，以及相应的地球定位定向参数（EOP）。目前，ITRF已成为国际公认的应用最广泛、精度最高的地心坐标参考框架。</p>
+
+<p>由于章动，极移等影响，ITRF框架每年都在变化，因此ITRF一直在持续的更新以保证参考框架的精度。而且随着全球测站数量的增加，观测精度的提高以及观测资料的积累、数据处理方法的改进，ITRF的精度也在不断地提升。</p>
+
+<p>ITRF从1988建立起已有13个版本.它们是 ITRF88, ITRF89, ITRF90, ITRF91, ITRF92, ITRF93, ITRF94, ITRF96, ITRF97, ITRF2000, ITRF2005, ITRF2008，ITRF2014.
+各个版本框架之间的转换参数详见 <a href="http://itrf.ensg.ign.fr/trans_para.php">http://itrf.ensg.ign.fr/trans_para.php</a></p>
+
+<h1 id="itrf2014与之前解决方案之间的转换参数">ITRF2014与之前解决方案之间的转换参数</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Transformation parameters from ITRF2014 to past ITRFs.
+----------------------------------------------------------------------------------------
+SOLUTION         Tx       Ty       Tz        D        Rx        Ry        Rz      EPOCH
+UNITS----------&gt; mm       mm       mm       ppb       .001&#34;     .001&#34;     .001&#34;
+                 .        .        .         .        .         .         .
+       RATES     Tx       Ty       Tz        D        Rx        Ry        Rz
+UNITS----------&gt; mm/y     mm/y     mm/y     ppb/y    .001&#34;/y   .001&#34;/y   .001&#34;/y
+-----------------------------------------------------------------------------------------
+  ITRF2008        1.6      1.9      2.4     -0.02      0.00      0.00      0.00    2010.0
+       rates      0.0      0.0     -0.1      0.03      0.00      0.00      0.00
+  ITRF2005        2.6      1.0     -2.3      0.92      0.00      0.00      0.00    2010.0
+       rates      0.3      0.0     -0.1      0.03      0.00      0.00      0.00
+  ITRF2000        0.7      1.2    -26.1      2.12      0.00      0.00      0.00    2010.0
+       rates      0.1      0.1     -1.9      0.11      0.00      0.00      0.00
+  ITRF97          7.4     -0.5    -62.8      3.80      0.00      0.00      0.26    2010.0
+       rates      0.1     -0.5     -3.3      0.12      0.00      0.00      0.02
+  ITRF96          7.4     -0.5    -62.8      3.80      0.00      0.00      0.26    2010.0
+       rates      0.1     -0.5     -3.3      0.12      0.00      0.00      0.02
+  ITRF94          7.4     -0.5    -62.8      3.80      0.00      0.00      0.26    2010.0
+       rates      0.1     -0.5     -3.3      0.12      0.00      0.00      0.02
+  ITRF93        -50.4      3.3    -60.2      4.29     -2.81     -3.38      0.40    2010.0
+       rates     -2.8     -0.1     -2.5      0.12     -0.11     -0.19      0.07
+  ITRF92         15.4      1.5    -70.8      3.09      0.00      0.00      0.26    2010.0
+       rates      0.1     -0.5     -3.3      0.12      0.00      0.00      0.02
+  ITRF91         27.4     15.5    -76.8      4.49      0.00      0.00      0.26    2010.0
+       rates      0.1     -0.5     -3.3      0.12      0.00      0.00      0.02
+  ITRF90         25.4     11.5    -92.8      4.79      0.00      0.00      0.26    2010.0
+       rates      0.1     -0.5     -3.3      0.12      0.00      0.00      0.02
+  ITRF89         30.4     35.5   -130.8      8.19      0.00      0.00      0.26    2010.0
+       rates      0.1     -0.5     -3.3      0.12      0.00      0.00      0.02
+  ITRF88         25.4     -0.5   -154.8     11.29      0.10      0.00      0.26    2010.0
+       rates      0.1     -0.5     -3.3      0.12      0.00      0.00      0.02
+_________________________________________________________________________________________</pre></td></tr></table>
+</div>
+</div>
+<h1 id="itrf框架相互转换">ITRF框架相互转换</h1>
+
+<h2 id="历元统一公式">历元统一公式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">P(t) = P(EPOCH) + vP * (t - EPOCH) </pre></td></tr></table>
+</div>
+</div>
+<h2 id="框架统一公式">框架统一公式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">: XS :    : X :   : Tx :   :  D   -Rz   Ry : : X :
+:    :    :   :   :    :   :               : :   :
+: YS :  = : Y : + : Ty : + :  Rz   D   -Rx : : Y :
+:    :    :   :   :    :   :               : :   :
+: ZS :    : Z :   : Tz :   : -Ry   Rx   D  : : Z :</pre></td></tr></table>
+</div>
+</div>
+<h1 id="实例">实例</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">待修改
+a=  [-1735212.5936   4976840.0908   3580538.3456 0.0000 0.0000 0.0000 2000.0000
+     -2267749.2520   5009154.3024   3221290.7366 0.0000 0.0000 0.0000 2000.0000
+     -2831733.3526   4675666.0060   3275369.4914 0.0000 0.0000 0.0000 2000.0000
+     -106937.8036    5549269.5654   3139215.8058 0.0000 0.0000 0.0000 2000.0000]
+ 
+ b= [-1735212.5953   4976840.1074   3580538.3229 0.0000 0.0000 0.0000 2000.0000
+     -2267749.2553   5009154.3190   3221290.7128 0.0000 0.0000 0.0000 2000.0000
+     -2831733.3574   4675666.0214   3275369.4678 0.0000 0.0000 0.0000 2000.0000
+     -106937.8007    5549269.5842   3139215.7818 0.0000 0.0000 0.0000 2000.0000]</pre></td></tr></table>
+</div>
+</div>
+<h1 id="讨论">讨论</h1>
+
+<p>（1）时间格式转换。
+（2）坐标历元转换。
+（3）框架转换（统一历元和统一框架两部分）。
+（4）任意两ITRF框架之间的转换参数求解。</p>
+
+<blockquote>
+<p>参考资料。ITRF官网资料； 《GPS测量与数据处理》；百科、维基；</p>
+</blockquote>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">GSir</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-04-07</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../images/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%8F%82%E6%95%B0%E8%BD%AC%E6%8D%A2/">参数转换</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2019-04-08-gmt%E7%B3%BB%E5%88%97%E4%B9%8B%E5%AE%89%E8%A3%85/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GMT系列之安装</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2019-04-04-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E8%AE%B0%E5%BD%95/">
+            <span class="next-text nav-default">个人博客更换记录</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'Gsir';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:gsir_ying@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/gsir-ying" class="iconfont icon-github" title="github"></a>
+      <a href="http://blog.sina.com.cn/u/5651674758" class="iconfont icon-weibo" title="weibo"></a>
+  <a href="http://gsir.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Gsir</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
