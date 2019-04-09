@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="GSir" /><meta name="description" content="  
+<meta name="author" content="GSir" /><meta name="description" content=" 目前GMT6.0使用并未普及，仍旧针对GMT5版本进行说明介绍。主要参考“GMT中文社区”。
+ 
 " /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
 
 
@@ -41,6 +42,7 @@
 
 <meta property="og:title" content="GMT系列之安装" />
 <meta property="og:description" content="
+目前GMT6.0使用并未普及，仍旧针对GMT5版本进行说明介绍。主要参考“GMT中文社区”。
 
 
 " />
@@ -50,6 +52,7 @@
 
 <meta itemprop="name" content="GMT系列之安装">
 <meta itemprop="description" content="
+目前GMT6.0使用并未普及，仍旧针对GMT5版本进行说明介绍。主要参考“GMT中文社区”。
 
 
 ">
@@ -57,7 +60,7 @@
 
 <meta itemprop="datePublished" content="2019-04-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="372">
 
 
 
@@ -65,6 +68,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GMT系列之安装"/>
 <meta name="twitter:description" content="
+目前GMT6.0使用并未普及，仍旧针对GMT5版本进行说明介绍。主要参考“GMT中文社区”。
 
 
 "/>
@@ -156,14 +160,63 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#01-windows平台安装">01 windows平台安装</a></li>
+<li><a href="#02-linux平台安装">02 linux平台安装</a></li>
+<li><a href="#03-windows平台gmt中文支持">03 windows平台GMT中文支持</a></li>
+<li><a href="#04-linux平台gmt中文支持">04 linux平台GMT中文支持</a></li>
+<li><a href="#05-gmt中文使用手册下载">05 GMT中文使用手册下载</a></li>
+<li><a href="#06-gmt实例">06 GMT实例</a></li>
+</ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
       <blockquote>
+<p>目前GMT6.0使用并未普及，仍旧针对GMT5版本进行说明介绍。主要参考“GMT中文社区”。</p>
 </blockquote>
 
 <p></p>
+
+<p>GMT，全称Generic Mapping Tools，中文一般译为“通用制图工具”，是地球科学最广泛使用的制图软件。GMT具有强大的绘图功能和数据处理功能。</p>
+
+<p>绘图方面，GMT支持绘制多种类型的底图，包括30多种地图投影、笛卡尔线性坐标轴、对数轴、指数轴、极坐标系，支持绘制统计直方图、等值线图、2D网格图以及3D视角图等，也支持绘制线段、海岸线、国界、多种符号、图例、色标、文字等。</p>
+
+<p>数据处理方面，GMT具有数据筛选、重采样、时间序列滤波、二维网格滤波、多项式拟合、线性回归分析等功能。</p>
+
+<h1 id="01-windows平台安装">01 windows平台安装</h1>
+
+<p><a href="https://docs.gmt-china.org/5.4.5/install/windows/">https://docs.gmt-china.org/5.4.5/install/windows/</a></p>
+
+<h1 id="02-linux平台安装">02 linux平台安装</h1>
+
+<p><a href="https://docs.gmt-china.org/5.4.5/install/linux/">https://docs.gmt-china.org/5.4.5/install/linux/</a></p>
+
+<h1 id="03-windows平台gmt中文支持">03 windows平台GMT中文支持</h1>
+
+<p><a href="https://docs.gmt-china.org/5.4.5/install/cn-windows/">https://docs.gmt-china.org/5.4.5/install/cn-windows/</a></p>
+
+<h1 id="04-linux平台gmt中文支持">04 linux平台GMT中文支持</h1>
+
+<p><a href="https://docs.gmt-china.org/5.4.5/install/cn-linux/">https://docs.gmt-china.org/5.4.5/install/cn-linux/</a></p>
+
+<h1 id="05-gmt中文使用手册下载">05 GMT中文使用手册下载</h1>
+
+<p><a href="/downloads/GMTv5.4.5_docs.pdf">GMTv5.4.5_docs</a></p>
+
+<h1 id="06-gmt实例">06 GMT实例</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">gmt pscoast -Rg -JK180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise <span class="se">\
+</span><span class="se"></span>    -Wthinnest &gt; globalMap.ps</code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="../images/20190409001.png" alt="" /></p>
     </div>
 
     <div class="post-copyright">
@@ -196,7 +249,11 @@
           <a href="/tags/%E5%AE%89%E8%A3%85/">安装</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/2019-04-09-%E5%A5%BD%E7%9A%84%E8%AF%BE%E5%A0%82%E8%AE%B0%E5%BD%95/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">好的课堂记录</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/2019-04-07-itrf%E8%BD%AC%E6%8D%A2/">
             <span class="next-text nav-default">ITRF转换至CGCS200</span>
             <span class="next-text nav-mobile">下一篇</span>
