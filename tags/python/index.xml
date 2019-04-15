@@ -6,10 +6,25 @@
     <description>Recent content in python on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python实现批量图像文本识别</title>
+      <link>http://gsir.top/post/2019-04-15-python%E5%AE%9E%E7%8E%B0%E6%89%B9%E9%87%8F%E5%9B%BE%E5%83%8F%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-04-15-python%E5%AE%9E%E7%8E%B0%E6%89%B9%E9%87%8F%E5%9B%BE%E5%83%8F%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;最近有工作需要提取2000+张图片上的某些信息，之前介绍过白玉人种智能有python的接口，小试一下，果然简单快速的解决了眼前的问题。
+如果人工识别，耗费巨大的精力不说，也会导致无法避免的错误。
+但是百度的图像文本识别有一定的能力限制，不可能会完全识别成功，识别出来的文本还需要简单的核对一下。具体步骤如下：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>python&#43;朋友圈分析</title>
