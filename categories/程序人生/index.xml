@@ -6,10 +6,23 @@
     <description>Recent content in 程序人生 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>pyinstaller打包第三方库</title>
+      <link>http://gsir.top/post/2019-04-19-pyinstaller%E6%89%93%E5%8C%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-04-19-pyinstaller%E6%89%93%E5%8C%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;之前在学习过程在使用pyinstaller进行程序打包是，第三方库无法自动搜索打包进去。搁置了一段时间，现在又遇到同样的问题而且是必须解决不可。通过搜索，测试，记录一下pyinstaller打包第三方库的方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>python实现批量图像文本识别</title>
