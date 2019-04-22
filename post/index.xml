@@ -18,7 +18,7 @@
       
       <guid>http://gsir.top/post/2019-04-19-pyinstaller%E6%89%93%E5%8C%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;之前在学习过程在使用pyinstaller进行程序打包是，第三方库无法自动搜索打包进去。搁置了一段时间，现在又遇到同样的问题而且是必须解决不可。通过搜索，测试，记录一下pyinstaller打包第三方库的方法。&lt;/p&gt;
+&lt;p&gt;之前在学习过程在使用pyinstaller进行程序打包时，第三方库无法自动搜索打包进去。搁置了一段时间，现在又遇到同样的问题而且是必须解决不可。通过搜索，测试，记录一下pyinstaller打包第三方库的方法。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
