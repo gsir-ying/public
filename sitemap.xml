@@ -24,6 +24,13 @@
   </url>
   
   <url>
+    <loc>http://gsir.top/post/2019-04-26-matlab%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://gsir.top/post/2019-04-19-pyinstaller%E6%89%93%E5%8C%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</loc>
     <lastmod>2019-04-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -345,15 +352,15 @@
   </url>
   
   <url>
-    <loc>http://gsir.top/tags/gamit-globk/</loc>
-    <lastmod>2018-11-06T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/categories/gamit-globk/</loc>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gsir.top/categories/gamit-globk/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/tags/gamit-globk/</loc>
+    <lastmod>2018-11-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -373,15 +380,15 @@
   </url>
   
   <url>
-    <loc>http://gsir.top/tags/gnss/</loc>
-    <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/categories/gnss/</loc>
+    <lastmod>2018-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gsir.top/categories/gnss/</loc>
-    <lastmod>2018-12-05T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/tags/gnss/</loc>
+    <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -402,7 +409,7 @@
   
   <url>
     <loc>http://gsir.top/tags/matlab/</loc>
-    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -416,7 +423,7 @@
   
   <url>
     <loc>http://gsir.top/post/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -492,15 +499,15 @@
   </url>
   
   <url>
-    <loc>http://gsir.top/tags/python/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/categories/python/</loc>
+    <lastmod>2019-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gsir.top/categories/python/</loc>
-    <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+    <loc>http://gsir.top/tags/python/</loc>
+    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -534,14 +541,14 @@
   </url>
   
   <url>
-    <loc>http://gsir.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <loc>http://gsir.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gsir.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+    <loc>http://gsir.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -703,7 +710,7 @@
   
   <url>
     <loc>http://gsir.top/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

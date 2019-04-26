@@ -6,10 +6,23 @@
     <description>Recent content in Matlab on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Matlab学习记录</title>
+      <link>http://gsir.top/post/2019-04-26-matlab%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-04-26-matlab%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Matlab简单好用，应用广泛，功能强大，是科研学习的好帮手。本文主要记录一些个人学习过程中遇到的问题和解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GAMIT基线重复性分析脚本</title>
