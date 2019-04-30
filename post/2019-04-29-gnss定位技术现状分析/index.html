@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>读书笔记 - Gsir</title>
+  <title>GNSS定位技术现状分析 - Gsir</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="GSir" /><meta name="description" content=" 读书时的一点点感觉，用文字来记录
+<meta name="author" content="GSir" /><meta name="description" content=" GNSS高精度定位解决方案发展现状简要分析
  
 " /><meta name="keywords" content="GNSS, 算法研究, 数据处理, 程序人生, 博客人生" />
 
@@ -28,7 +28,7 @@
 <meta name="generator" content="Hugo 0.50 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
+<link rel="canonical" href="http://gsir.top/post/2019-04-29-gnss%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,35 +40,35 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="读书笔记" />
+<meta property="og:title" content="GNSS定位技术现状分析" />
 <meta property="og:description" content="
-读书时的一点点感觉，用文字来记录
+GNSS高精度定位解决方案发展现状简要分析
 
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://gsir.top/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" /><meta property="article:published_time" content="2018-11-05T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-11-05T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://gsir.top/post/2019-04-29-gnss%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90/" /><meta property="article:published_time" content="2019-04-29T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-29T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="读书笔记">
+<meta itemprop="name" content="GNSS定位技术现状分析">
 <meta itemprop="description" content="
-读书时的一点点感觉，用文字来记录
+GNSS高精度定位解决方案发展现状简要分析
 
 
 ">
 
 
-<meta itemprop="datePublished" content="2018-11-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-11-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1786">
+<meta itemprop="datePublished" content="2019-04-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1455">
 
 
 
-<meta itemprop="keywords" content="读书," />
+<meta itemprop="keywords" content="GNSS," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="读书笔记"/>
+<meta name="twitter:title" content="GNSS定位技术现状分析"/>
 <meta name="twitter:description" content="
-读书时的一点点感觉，用文字来记录
+GNSS高精度定位解决方案发展现状简要分析
 
 
 "/>
@@ -146,12 +146,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">读书笔记</h1>
+      <h1 class="post-title">GNSS定位技术现状分析</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-11-05 </span>
+        <span class="post-time"> 2019-04-29 </span>
         <div class="post-category">
-            <a href="/categories/%E4%B9%A6%E7%B1%8D%E4%BA%BA%E7%94%9F/"> 书籍人生 </a>
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"> 数据处理 </a>
             </div>
         
       </div>
@@ -160,95 +160,88 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#ppp">PPP</a>
+<ul>
+<li><a href="#介绍">介绍</a></li>
+</ul></li>
+<li><a href="#rtk">RTK</a></li>
+<li><a href="#网络rtk">网络RTK</a></li>
+<li><a href="#一-gnss高精度定位的主要特征和关键参数">一、GNSS高精度定位的主要特征和关键参数</a>
+<ul>
+<li><a href="#1-测绘领域用户的主要特征">1 测绘领域用户的主要特征</a></li>
+<li><a href="#2-关键性能参数">2 关键性能参数</a></li>
+</ul></li>
+<li><a href="#二-高精度接收机发展现状">二、高精度接收机发展现状</a>
+<ul>
+<li><a href="#1-采用多星座模式">1 采用多星座模式</a></li>
+<li><a href="#2-采用多频模式">2 采用多频模式</a></li>
+<li><a href="#三-驱动因素和发展趋势">三、驱动因素和发展趋势</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
       <blockquote>
-<p>读书时的一点点感觉，用文字来记录</p>
+<p>GNSS高精度定位解决方案发展现状简要分析</p>
 </blockquote>
 
 <p></p>
 
-<p><strong>001《天才在左疯子在右》</strong></p>
+<h1 id="ppp">PPP</h1>
 
-<ul>
-<li><p>通书以对话的方式叙述作者与一个个“精神病人”的交流故事。每翻起书本，自己就仿佛变成了作者，对面坐着“精神病人”，我们在沟通，在对话。</p></li>
+<h2 id="介绍">介绍</h2>
 
-<li><p>书中曾多次谈到角度的问题，每个人所看到的、理解的世界仅仅是自己的那个世界。更多更多的世界需要我们去看，去探索。</p></li>
+<p>RTK（Real - time kinematic）实时动态差分法。这是一种新的常用的GPS测量方法，以前的静态、快速静态、动态测量都需要事后进行解算才能获得厘米级的精度，而RTK是能够在野外实时得到厘米级定位精度的测量方法，它采用了载波相位动态实时差分方法，是GPS应用的重大里程碑，它的出现为工程放样、地形测图，各种控制测量带来了新曙光，极大地提高了外业作业效率。</p>
 
-<li><p>我在你眼中是疯子，你在我眼中也是疯子，到底谁才是疯子？</p></li>
+<p>高精度的GPS测量必须采用载波相位观测值，RTK定位技术就是基于载波相位观测值的实时动态定位技术，它能够实时地提供测站点在指定坐标系中的三维定位结果，并达到厘米级精度。在RTK作业模式下，基准站通过数据链将其观测值和测站坐标信息一起传送给流动站。流动站不仅通过数据链接收来自基准站的数据，还要采集GPS观测数据，并在系统内组成差分观测值进行实时处理，同时给出厘米级定位结果，历时不足一秒钟。流动站可处于静止状态，也可处于运动状态；可在固定点上先进行初始化后再进入动态作业，也可在动态条件下直接开机，并在动态环境下完成整周模糊度的搜索求解。在整周末知数解固定后，即可进行每个历元的实时处理，只要能保持四颗以上卫星相位观测值的跟踪和必要的几何图形，则流动站可随时给出厘米级定位结果。</p>
 
-<li><p>书读一半，里面介绍的大部分“精神病人”其实都是在某一方面有着异于常人的偏执和痴迷，类似于“走火入魔”。他们都有着一堵属于自己的完整的且不可攻破的墙。</p></li>
+<h1 id="rtk">RTK</h1>
 
-<li><p>花了两天空闲时间急切地将真本书看完了，好像有很多感觉，也不知从何表达。世界上存在着许多未知我们都无法理解、相信，就像古代的人无法理解现代生活。</p></li>
+<h1 id="网络rtk">网络RTK</h1>
 
-<li><p>类似一个没有边际的容器囊括着所有，我们称之为世界，我们也在这个容器里以某种方式一直存在着。</p></li>
+<h1 id="一-gnss高精度定位的主要特征和关键参数">一、GNSS高精度定位的主要特征和关键参数</h1>
 
-<li><p>人类幻想着永生，永生之后呢，可能就是毁灭。</p></li>
+<h2 id="1-测绘领域用户的主要特征">1 测绘领域用户的主要特征</h2>
 
-<li><p>人生总要有点乐趣或执着，不然，人生不就太没有意义了吗?</p></li>
-</ul>
+<p>作为 GNSS 解决方案的高级用户，测绘专业人员正受益于接收机技术的显著改进，例如在多星座 GNSS 时代到来后信号的高可用性、价格下降和多重可用性。包括土地测量 ( 地籍、建筑和矿山 )、测绘和海洋测量 ( 海洋地籍、水文和海洋测量 ) 在内的若干部门受益于基于 GNSS 的高精度解决方案的推广。多星座和多频接收机以及各种差分校正技术 (SBAS、<strong>RTK</strong> 和 DGNSS) 和精密单点定位（<strong>PPP</strong>），是目前测绘部门的首选方案。</p>
 
-<blockquote>
-<p>偶尔一个人的时候，或许是在夜晚躺在床上的时候，会突然想到死亡，会想到死了之后没有感觉、没有记忆、什么都没有，一切都是虚无的。。。那个时候会感到极度的恐惧与悲哀，会怀疑人生的意义和追求，从死亡那一刻起，世界上的一切对你来说都没有关系，反正你也感觉不到。</p>
+<h2 id="2-关键性能参数">2 关键性能参数</h2>
 
-<p>幸好，这种恐惧和虚无只是暂时的，我依然会想到我的亲友、类似我的每一个人、会感受到世界给予的美好。</p>
+<p>关键性能参数很大程度上取决于所完成的特定应用。</p>
 
-<p>每一个人都会死去，或许每个人都会害怕，但是又怎样，我们的存在只限于当下的一刻，过去的你不存在，未来的你也不存在，你的思维，想象，一切也只存在于此刻。活在当下或许就是人生哲理，隐忍和低调或许就应该是人生的处事原则。</p>
-</blockquote>
+<p>（1）<strong>精度</strong>
+对于不同的操作，精度要求从米到亚米到厘米不等。它通过部署多星座和多频接收机以及利用RTK、PPP、SBAS 或其组合来实现。某些农业活动( 例如，固定道 ) 不仅要求通行精度，而且对逐年
+累积误差 (GNSS 漂移 ) 提出了要求。</p>
 
-<p><strong>004《浮生六记》</strong></p>
+<p>（2）<strong>可用性</strong>
+特别是在信号接收环境变差或农村地区，可用性变得至关重要。</p>
 
-<ul>
-<li><p>《浮生六记》为自传散文体小说，清代沈复作品，为文言文，有翻译的白话文。六部分分别为闺房记乐、闲情记趣、坎坷记愁、浪游记快、中山记历、养生记道。现存前四卷。《浮生六记》以作者夫妇生活为主线，赢余了平凡而又充满情趣的居家生活的浪游各地的所见所闻。作品描述了作者和妻子陈芸情投意合，想要过一种布衣蔬食而从事艺术的生活，由于封建礼教的压迫与贫困生活的煎熬，终至理想破灭。本书文字清新真率，无雕琢藻饰痕迹，情节则伉俪情深，至死不复；始于欢乐，终于忧患，漂零他乡，悲切动人。</p></li>
+<p>（3）<strong>首次定位时间</strong>
+改进的“首次定位时间”和（重新）收敛时间转化为在测量项目上花费的总时间减少，随后可降低成本。</p>
 
-<li><p>林语堂在序言中写道“芸，我想，是中国文学上一个最可爱的女人”。</p></li>
+<p>（4）<strong>完好性</strong>
+完好性对生命安全 ( 和设备 ) 应用 ( 即机械控制 ) 至关重要，并且与资本密集型应用 ( 例如采矿和海上应用 ) 相关。</p>
 
-<li><p>读浮生六记，感受人生的酸甜苦辣咸，不进时常抑郁感慨！先不说文笔淳朴无华，格式自由贴切，单说作者夫妇志取相投，伉俪情深，苦中作乐，生离死别，不禁让人欢喜与悲恸！</p></li>
+<p>（5）<strong>连续性</strong>
+连续性对于将由于卫星接收信号不良导致的运行停机时间减到最小至关重要 ( 例如，海洋工程 )。</p>
 
-<li><p>夫妻情谊有如此，何求？芸临死之前并没有对自己的感情有所遗憾，让人有些许的欣慰。</p></li>
+<h1 id="二-高精度接收机发展现状">二、高精度接收机发展现状</h1>
 
-<li><p>珍惜眼前人，那个她（他）是自己一辈子甚至是永远要在一起的人。相互尊重、爱戴；彼此理解、宽容；知我所知，感你所感。</p></li>
-</ul>
+<h2 id="1-采用多星座模式">1 采用多星座模式</h2>
 
-<blockquote>
-<p>愿天下有情人终无憾。</p>
-</blockquote>
+<p>几乎所有高精度细分领域的用户都受益于使用多星座接收机。这包括提高可用性 ( 特别是在信号衰减的环境、城市峡谷或农村地区 )、更快地求解模糊度、获得更大的覆盖范围 ( 尤其是北纬地区 )、增加的适应性 ( 特别是对授时用户 ) 和改进的卫星几何因子。因此，目前针对专业应用的绝大多数接收机能够处理至少两个星座的信号，而 <strong>40％</strong>具有跟踪四个星座的能力。</p>
 
-<p><strong>005《城南旧事》</strong></p>
+<h2 id="2-采用多频模式">2 采用多频模式</h2>
 
-<ul>
-<li><p>小时候在老家的时候分不清疯子，也不愿意承认她是疯子，她只是想念她那还没有和她结婚就离开没有再回来过的丈夫和秋天桂花香时刚出生就被丢弃的小桂子。</p></li>
+<p>只有使用多频接收机，才能满足一些对精度要求很高的应用场合（包括农业应用中的自动转向和多次测量操作）。这是通过从位置计算中<strong>消除电离层误差</strong>和有效<strong>减少多径效应</strong>来实现的。同样地，采用伽利略 E5、GPS L5 以及伽利略 E6 使得三频接收机类型增多，使得 PPP 和差分定位的<strong>收敛时间显著减少</strong>。使用三频接收机的另一个好处是增加了<strong>抗干扰的能力</strong>。</p>
 
-<li><p>上小学在新家的时候分不清蓝天和海洋，因为太阳同时从海边和天空升起来；同样也分不清好人和坏人，最后却无意地“伤害”了坏的好人。</p></li>
+<p><img src="../images/20190429001.png" alt="" /> <img src="../images/20190429002.png" alt="" />
+<img src="../images/20190429003.png" alt="" /> <img src="../images/20190429004.png" alt="" /></p>
 
-<li><p>兰姨娘的出现与离开，其实也在暗示着“我”在慢慢长大了；对兰姨娘的喜欢——冷淡——再到最后的不舍与依恋，正常而又丰富的情感，很真实。最有意思的片段便是我撮合兰姨娘和四眼先生的过程，爸爸妈妈几乎全不知情。最后爸爸从口里得知四眼先生要和兰姨娘一起离开时，心里应该很不是滋味吧，爸爸心里也对兰姨娘有好感的其实。最后竟然还有点可怜爸爸了。</p></li>
-
-<li><p>宋妈不仅仅是我的奶妈，也是我整个童年最美好的回忆之一。宋妈待我和四个姊妹比亲生的还要亲，临走的时候还在挂念我们的起居，我的病情，弟弟明天早上可能会哭闹等等。</p></li>
-
-<li><p>看到这里不仅流泪了。宋妈妈很可怜，丈夫爱赌，整天不务正业，自己的儿子和女儿死了隐瞒着不告诉宋妈，每年照想宋妈拿钱。宋妈真寒心。虽然整家人离不开宋妈的照顾，</p></li>
-
-<li><p>但妈妈最后还是让宋妈离开了，我们总不能自私的留着宋妈吧。</p></li>
-</ul>
-
-<p><strong>006《给青年的12封信》</strong></p>
-
-<ul>
-<li><p>美学大家朱光潜所作，提供给现代青少年的成长指南。</p></li>
-
-<li><p>字字珠玑，发人深省。</p></li>
-
-<li><p>需要经常揣摩。生活中，或喜或悲，或高或低，都可以拿出来翻看一下，提醒一下自己，认清远方的路途。</p></li>
-
-<li><p>其中“谈动与静”，很是喜欢。</p></li>
-
-<li><p>因闲得愁，闲愁最苦。无聊的人生不值得过。</p></li>
-
-<li><p>采菊东篱下，悠然见南山。</p></li>
-</ul>
-
-<p><strong>007《鬼谷子》</strong></p>
+<h2 id="三-驱动因素和发展趋势">三、驱动因素和发展趋势</h2>
     </div>
 
     <div class="post-copyright">
@@ -258,7 +251,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-11-05</span>
+    <span class="item-content">2019-04-29</span>
   </p>
   
   
@@ -278,16 +271,12 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E8%AF%BB%E4%B9%A6/">读书</a>
+          <a href="/tags/gnss/">GNSS</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/2018-11-05-%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">读书清单</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/2018-11-04-gamit%E5%9F%BA%E7%BA%BF%E9%87%8D%E5%A4%8D%E6%80%A7%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC/">
-            <span class="next-text nav-default">GAMIT基线重复性分析脚本</span>
+        
+        <a class="next" href="/post/2019-04-26-matlab%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+            <span class="next-text nav-default">Matlab学习记录</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

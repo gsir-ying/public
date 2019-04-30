@@ -6,10 +6,23 @@
     <description>Recent content in 数据处理 on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 03 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GNSS定位技术现状分析</title>
+      <link>http://gsir.top/post/2019-04-29-gnss%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-04-29-gnss%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;GNSS高精度定位解决方案发展现状简要分析&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>有关于速度场插值拟合主要思路</title>
