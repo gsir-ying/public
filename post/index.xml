@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Gsir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gsir.top/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python打包程序体积太大解决方法</title>
+      <link>http://gsir.top/post/2019-05-13-python%E6%89%93%E5%8C%85%E7%A8%8B%E5%BA%8F%E4%BD%93%E7%A7%AF%E5%A4%AA%E5%A4%A7%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gsir.top/post/2019-05-13-python%E6%89%93%E5%8C%85%E7%A8%8B%E5%BA%8F%E4%BD%93%E7%A7%AF%E5%A4%AA%E5%A4%A7%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;两种通用方法解决python打包程序体积太大这一问题&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GNSS高精度定位解决方案发展现状简要分析</title>
